@@ -54,8 +54,21 @@ Ein Protokoll besteht aus:
   - Holographie
 
 - **Operationsverstärker**
+  - Emitterschaltung eines Transistors
+  - Aufbauen der Grundschaltung eines Operationsverstärkers
+  - Aufbauen einer invertierenden Grundschaltung
+  - Aufbauen eines Addierers, Integriers und Differenzierers
+  - Aufbauen einer Einweggleichrichterschaltung und einer Generatorschaltung für Dreieck- und Rechtecksignale
+  - Aufbauen einer "Programmierten Differentialgleichung 2. Ordnung"
+  
 - **Ideales und reales Gas**
+  - Bestimmung des Spannungskoeffizienten der Luft, Berechnung der Celsiustemperatur des absoluten Nullpunkts
+  - Bestimmung des Verhältnisses der spezifischen Wärmen für Luft und zwei andere Gase mit verschiedenen Methoden
+  - Messung der Dampfdruckkurve einer Flüßigkeit bei verschiedenen Temperaturen und Berechnung daraus der Verdampfungswärme
+
 - **Laser-Optik, Teil B**
+  - 
+
 - **Wärmestrahlung**
 
 ## Mitarbeiter
