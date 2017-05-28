@@ -1,0 +1,233 @@
+\documentclass[a4paper,titlepage]{scrartcl}
+\pagestyle{plain}
+\usepackage[latin9]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{units}
+\usepackage{subcaption}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{pgfplots,pgfplotstable}
+\usepackage{numprint}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{floatrow}
+\usepackage{longtable}
+\floatsetup[table]{capposition=top}
+
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+\numberwithin{equation}{section}
+
+\title{Auswertung vom Versuch P2-50: Eigenschaften elektrischer Bauelemente}
+\author{Gruppe Di-22\\Genti Saliu, Jonas Müller}
+\date{14. Juli 2014}
+
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+
+\section{R(T)-Abhängigkeit verschiedener Bauteile}
+In diesem Versuchsteil sollte die Temperaturabhängigkeit eines Heiß- bzw. Kaltleiterwiderstands bestimmt werden. Dazu wurde eine Wheatstonesche Brückenschaltung gemäß der Skizze in der Vorbereitung aufgebaut um somit die Widerstände bei unterschiedlichen Temperaturen zu bestimmen. Dabei ergibt sich der Widerstand des Bauteils aus dem Referenzwiderstand $R_{Ref}$ und dem gemessenen Potentiometerwiderstand $R_{Pot}$ gemäß:
+\begin{equation*}
+R_{Bauteil}= \frac{R_{Pot}}{10k\Omega - R_{Pot}}\cdot R_{Ref} 
+\end{equation*} 
+Die Temperatur der Leiter wurde mit einem Digitalthermometer gemessen.
+
+\subsection{Heißleiter}
+Bei der ersten Messung wurde ein Heißleiterwiderstand kontinuierlich von Raumtemperatur auf $\unit[200]{C^\circ}$ erwärmt. In regelmäßigen Abständen wurde das Potentiometer so eingestellt, dass kein Strom floss. Es wurde die entsprechende Temperatur und Potentiometerwiderstand notiert. Als Referenzwiderstand wurde $R_{Ref}=\unit[680]{\Omega}$ verwendet.\\ 
+Die Messwerte haben wir in ein Schaubild eingetragen. Für den Heißleiterwiderstand (NTC) erwarten wir die Abhängigkeit $R_{NTC}= a\cdot e^{\frac{b}{T}}$.
+\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.8\textwidth]{bilder/ntc.png}\\
+		\end{tabular}
+		\caption{R(T)-Abhängigkeit eines Heißleiters}
+		\label{fig:ntc}
+\end{figure}
+Wie erwartet erkennt man im Schaubild einen exponentiellen Abfall der Werte. Um nun die Koeffizienten $a$ und $b$ zu bestimmen, wird wie in der Vorbereitung erwähnt $ln(R(T))$ über $\frac{1}{T}$ aufgetragen und eine lineare Regression durchgeführt.
+\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.8\textwidth]{bilder/ntc_ln.png}\\
+		\end{tabular}
+		\caption{Linearisierte R(T)-Abhängigkeit eines Heißleiters}
+		\label{fig:ntcln}
+\end{figure}
+Die Regression mit Mathematica liefert:
+\begin{equation*}
+ln(R(T))= b \cdot \frac{1}{T} + ln(a)
+\end{equation*}
+Es ergibt sich also $b=\unit[3291.94]{K}$ und $ln(a)=\unit[-2.12]{\Omega}$ und damit $a=\unit[0.12]{\Omega}$. Die charakteristische Gleichung für das NTC ist dann gegeben durch:
+\begin{equation*}
+R(T)= a\cdot e^{\frac{b}{T}}
+\end{equation*}
+Ein solches NTC kann zur Temperaturmessung verwendet werden. Dazu legt man eine konstante Spannung an und schließt über das Ohmsche Gesetz auf den aktuellen Widerstand. Durch die charakteristische Gleichung des NTC kann, dann auf die Temperatur geschlossen werden.\\
+Es ist auch möglich mit einem NTC den Füllstand eines Tanks oder anderen Gefäßes zu messen. Man erwärmt dazu das NTC mit einer konstanten Temperatur, die höher ist als die Temperatur der Flüssigkeit deren Stand gemessen werden soll, Steht nun die Flüssigkeit hoch genug um das NTC zu berühren und es so abzukühlen, kann eine Stromänderung im NTC registriert werden. Man weiß nun, dass eine gewisse Füllhöhe erreicht ist.\\
+Außerdem kann das NTC als Strombegrenzung eingesetzt werden indem man es parallel zu einem zu schützenden Bauteil einbaut. Fließt nun eine großer Strom, erwärmt sich das NTC und der Widerstand sinkt, was dazu führt, dass ein Großteil des Stroms durch das NTC und nicht durch das Bauteil.
+
+\subsection{Kaltleiterwiderstand}
+Nun wurde der noch heiße Ofen dazu verwendet um absteigend Werte für den Kaltleiterwiderstand aufzunehmen. Dazu wurden das Bauteil ausgetauscht (NTC durch PT100 ersetzt) und eine neuer Referenzwiderstand von $R_{Ref}= \unit[100]{\Omega}$ eingesetzt. Die restliche Schaltung wurde beibehalten. Das Vorgehen bei der Messung, sowie das Auswerten wurde analog zum Heißleiter durchgeführt. Es ist hier der Zusammenhang $R_{PT100}= R_0 \cdot \left(1+ \alpha T\right)$ zu erwarten.\\
+Das Auftragen der Werte ergab folgendes Schaubild:
+\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.8\textwidth]{bilder/ptc.png}\\
+		\end{tabular}
+		\caption{R(T)-Abhängigkeit eines Kaltleiters}
+		\label{fig:ntc}
+\end{figure}
+Man erhält durch eine lineare Regression mit Mathematica:
+ 
+\begin{equation*}
+R(T)= R_0 + c \cdot T
+\end{equation*}
+ 
+Also $R_0=\unit[28.54]{\Omega}$ und $c=\unit[0.28]{\frac{\Omega}{K}}$. Nun sollte noch geprüft werden, ob der Kaltleiterwiderstand sich bei $T=\unit[0]{^\circ C}$ wie erwartet verhält, d.h. $R(\unit[0]{^\circ C})= \unit[100]{\Omega}$.
+ 
+\begin{equation*}
+R(\unit[0]{^\circ C})=\unit[104.98]{\Omega}
+\end{equation*}
+Nach dem gleichen Prinzip wie der NTC, kann auch der PT100 zu Temperatur- bzw. Füllstandmessung verwendet werden.
+\section{Piezoelektrischer Effekt am Piezoelement}
+Der piezoelektrische Effekt und der inverse piezoelektrische Effekt sollten in diesem Versuch demonstriert werden.\\ \\
+An dieser Stelle sei nochmal erinnert, dass der piezoelektrische Effekt sich in Materialien bemerkbar macht, wo aufgrund mechanischer Verformungen, das Material polarisiert wird und darin ein elektrisches Feld entsteht, währenddessen der inverse, indem ein elektrisches Feld ein piezoelektrisches Material mechanisch verformt.\\ \\
+Um den piezoelektrischen Effekt zu zeigen, also das entstehende elektrische Feld zu registrieren, wurde das Piezoelement an das PicoScope angeschlossen.\\ \\
+Danach klopten wir auf das Piezoelement und das PicoScope registrierte folgenden Spannungsverlauf:
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{@{}r@{}}
+		\includegraphics[width=0.7\textwidth]{bilder/Aufgabe_4_Drucktest.png}\\
+	\end{tabular}
+	\caption{Per Klopf induzierter Spannungsverlauf}
+\end{figure}
+Weitere Demonstrationen folgten, in denen wir das Piezoelement auf einen Lautsprecher legten, der selbst mit einem Frequenzgenerator angeschlossen war, und dort jeweils Dreieck-, Rechteck- und Sinussignale erzeugten.\\ \\
+Den inversen piezoelektrischen Effekt, also die Funktion des Piezoelements als Piezolautsprecher, zeigten wir, indem wir den Lautsprecher direkt an den Frequenzgenerator anschlossen und dort wieder die gleichen Signalarten erzeugten. Es waren zwar Töne zu hören, da aber der Piezolautsprecher nicht funktionstüchtig war, waren diese unsauber.\\ \\
+Die folgenden Bilder zeigen den piezoelektrischen Effekt und seine Umkehrung aufgrund der am Piezoelement bzw. als Mikrofon fungierenden Piezolautsprecher aufgenommenen Spannung.
+\begin{figure}[H]
+	\centering
+  \begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=\textwidth]{bilder/Aufgabe_4_Dreieck.png}\\
+		\caption{Piezoelektrischer Effekt mit Dreieckspannung}
+	\end{subfigure}
+  \begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=\textwidth]{bilder/Aufgabe_4_Dreieck_umgekehrt.png}\\
+    \caption{Inverser piezoelektrischer Effekt mit Dreieckspannung}
+	\end{subfigure}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=\textwidth]{bilder/Aufgabe_4_Rechteck.png}\\
+		\caption{Piezoelektrischer Effekt mit Rechteckspannung}
+	\end{subfigure}
+  \begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=\textwidth]{bilder/Aufgabe_4_Rechteck_umgekehrt.png}\\
+    \caption{Inverser piezoelektrischer Effekt mit Rechteckspannung}
+	\end{subfigure}
+\end{figure}
+\begin{figure}[H]
+	\centering
+  \begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=\textwidth]{bilder/Aufgabe_4_Sinus.png}\\
+		\caption{Piezoelektrischer Effekt mit Sinusspannung}
+	\end{subfigure}
+  \begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=\textwidth]{bilder/Aufgabe_4_Sinus_umgekehrt.png}\\
+    \caption{Inverser piezoelektrischer Effekt mit Sinusspannung}
+	\end{subfigure}
+\end{figure}
+Es fällt auf, dass die Rechteckspannung am schlechtesten übertragen wurde.\\ \\
+Allein aus diesen Versuchen lässt sich erahnen, dass die Anwendungen des piezoelektrischen Effekts vielfältig sind. Offensichtlich wird er bei Lautsprechern und Mikrofonen benutzt. Desweiteren wird er angewendet bei:
+\begin{description}
+\item[Feuerzeugen mit Piezoentzüdung] Der Knopfdruck regt ein piezoelektrisches Kristall an und induziert eine Spannung, die dann das Gas anheizt und anfeuert.
+\item[Piezoelektrischen Transformatoren] die der Spannungsverstärkung dienen und das Prinzip der Akkustikkupplung nutzen. Die Eingangsspannung trifft auf ein piezokeramisches Material und bringt ihn zum Schwingen. Dabei entspricht die Frequenz dieser Schwingungen der Resonanzfrequenz des Systems, was eine erhöhte Ausgangsspannung an einem anderen Teil des Materials zur Folge hat.
+\end{description}
+Weitere Anwendungsbeispiele sind Beschleunigungs-, Druck-, Kraftsensoren mit Piezokristalle, Piezo-Druckköpfe bei Tintenstrahldruckern, Ultraschallerzeugern mit Piezokristallen, Ultraschall-, Dieselmotoren, Quarzuhren u.v.m.
+\section{Sprungtemperatur eines Hochtemperatursupraleiters}
+In diesem Versuch sollte die Sprungtemperatur eines Hochtemperatursupraleiters bestimmt werden, also die Temperatur ab der sein Widerstand gleich Null wird.\\ \\
+Dazu haben wir den Supraleiter an einer mit Gleichstrom $I_{const}=\unit[63]{mA}$ betriebenen Vierleiterschaltung angeschlossen und seinen Widerstand für Temperaturen im Bereich Raumtemperatur bis $\unit[77]{K}$ festgehalten. Der Widerstand wurde aus dem Spannungsabfall $U$ am Supraleiter, welcher mit einem Multimeter gemessen wurde, und dem Ohmschen Gesetz $R=\frac{U}{I_{const}}$ bestimmt.\\ \\
+Die Abkühlung von Raumtemperatur auf $\unit[77]{K}$ erfolgte in $\unit[5]{K}$-Schritten, indem die Oberfläche des Supraleiters in Berührung mit flüssigem Stickstoff in einem Dewer-Gefäß kam.\\ \\
+Versehentlich tauchten wir nach der Spannungsmessung bei $t=\unit[103]{^\circ C}$ den Supraleiter fast komplett im Stickstoffbad ein, sodass er sehr schnell herunter gekühlt wurde. Nach Herausholen aus dem Bad und Bringen des Supraleiters auf die nächst zu messende Temperatur, erhielten wir für die Spannung einen viel größeren Wert als für die Temperatur davor. Deshalb haben wir jeweils 2 Tabellen und Diagramme für unsere Messungen unten zusammengestellt, jeweils vor und nach dem Eintauchen:
+\begin{table}[H]
+	\caption{Abhängigkeit des Supraleiter-Widerstands von der Temperatur}
+	\begin{subtable}[t]{.5\linewidth}
+		\centering
+		\caption{Vor Eintauchen des Supraleiters}
+		\begin{tabular}{c|c|c}
+		Temperatur (K)&U (mV)&R ($\Omega$)\\
+		\hline
+		297&1.5&0.0238\\
+		289&1.44&0.0229\\
+		284&1.42&0.0225\\
+		279&1.4&0.0222\\
+		274&1.378&0.0219\\
+		269&1.356&0.0215\\
+		264&1.135&0.0203\\
+		259&1.315&0.0209\\
+		254&1.295&0.0206\\
+		249&1.276&0.0203\\
+		244&1.255&0.0199\\
+		239&1.236&0.0196\\
+		234&1.215&0.0193\\
+		229&1.195&0.0189\\
+		224&1.175&0.0187\\
+		219&1.153&0.0183\\
+		215&1.135&0.018\\
+		210&1.116&0.0177\\
+		205&1.094&0.0174\\
+		200&1.072&0.017\\
+		195&1.05&0.0167\\
+		190&1.028&0.0167\\
+		185&0.997&0.0158\\
+		180&0.761&0.012\\
+		175&0.622&0.01\\
+		170&0.55&0.009
+		\end{tabular}
+	\end{subtable}%
+	\begin{subtable}[t]{.5\linewidth}
+		\centering
+		\caption{Nach Eintauchen des Supraleiters}
+		\begin{tabular}{c|c|c}
+		Temperatur (K)&U (mV)&R ($\Omega$)\\
+		\hline
+		165&0.925&0.015\\
+		160&0.880&0.014\\
+		155&0.412&0.007\\
+		150&0.022&0.00035\\
+		145&0.019&0.0003\\
+		140&0.018&0.00028\\
+		135&0.013&0.0002\\
+		130&0.009&0.0001\\
+		125&0.004&0.00006\\
+		\textbf{120}&\textbf{0}&\textbf{0}\\
+		115&0.003&0.00005
+		\end{tabular}
+	\end{subtable}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+  \begin{subfigure}[b]{0.9\textwidth}
+		\includegraphics[width=\textwidth]{bilder/aufgabe5_1.png}\\
+		\caption{Vor Eintauchen des Supraleiters}
+    \label{fig:aufgabe5_1}
+	\end{subfigure}
+	
+  \begin{subfigure}[b]{0.9\textwidth}
+		\includegraphics[width=\textwidth]{bilder/aufgabe5_2.png}\\
+    \caption{Nach Eintauchen des Supraleiters}
+    \label{fig:aufgabe5_2}
+	\end{subfigure}
+	\caption{Widerstand über Temperatur für Supraleiter}
+\end{figure}
+Trotz dem oben genannten Fehler in der Versuchsausführung, ist der Tabelle und dem obigen Schaubild zu entnehmen, dass der Widerstand bei $T=\unit[120]{K}$ bzw. $t=\unit[-153]{^\circ C}$ Null wird, d.h. der Leiter ist in dieser Temperatur (fast) widerstandslos und somit supraleitend.  
+\end{document}

@@ -1,0 +1,195 @@
+\documentclass[a4paper,titlepage]{scrartcl}
+\pagestyle{plain}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{enumerate}
+\usepackage{units}
+
+\numberwithin{equation}{section}
+
+\title{Versuch P2-72: Gamma-Spektroskopie und Statistik\\Vorbereitung}
+\author{Gruppe Di-22\\Genti Saliu, Jonas Müller}
+\date{03. Juni 2014}
+
+\begin{document}
+	\begin{titlepage}
+		\maketitle
+		\thispagestyle{empty}
+	\end{titlepage}
+	
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+\section{Grundlage}
+\subsection{Strahlungsarten}
+
+Bei radioaktivem Zerfall, können verschiedene Arten von Strahlung entstehen: $\alpha $-Strahlung (Geladen Heliumkerne), $\beta$-Strahlung (Elektronen oder Positronen) und $\gamma $-Strahlung (hochenergetische elektromagnetische Strahlung). Während $\alpha $-Strahlung eine relativ geringe Eindringtiefe aufweist, besitzt $\gamma $-Strahlung eine deutlich größere. Darüber hinaus lässt sich $\gamma$-Strahlung, da sie ungeladen ist, nur schlecht abschirmen.
+
+\subsection{Wechselwirkung von $\gamma$-Strahlung mit Materie}
+
+Es kann nur verschiedenartiger Wechselwirkung zwischen $\gamma $-Strahlung und Materie kommen
+
+\subsubsection{Comptonstreuung}
+Zur Comptonstreuung kommt es, wenn ein $\gamma $-Quanten (oder Photonen) auf ein äußeres Elektron der Atomhülle trifft. Dieses Elektron ist nur schwach gebunden, daher kommt es zu einem inelastischen Stoß gemäß Impuls- und Energieerhaltung. Das Photon gibt Energie an das Elektron ab, welches gestreut wird und sich nun mit der übertragenen Energie minus der Austrittsarbeit fortbewegt. Durch die Energieabgabe erfährt das Photon eine Frequenzerhöhung. Die Energieübertragung ist dabei von dem Streuwinkel abhängig, wobei die maximale Energieübertragung bei der Rückstreuung des Photons gegeben ist. Das Elektron und das Photo bewegen sich dann unter solchen Winkel zur ursprünglichen Bewegungsrichtung, dass Energie- und Impulserhaltung gegeben sind. Die Wahrscheinlichkeit der Comptonstreuung steigt mit geringerer Energie und höherer Kernladungszahl.Für die $\gamma $-Quanten nach dem Stoß gilt
+
+\begin{equation*}
+E_{\gamma,2}=\frac{E_{\gamma}}{1+ \frac{E_{\gamma}}{m_e c^2}\left( 1- \cos{\Phi} \right)}
+\end{equation*}
+
+\subsubsection{Photoeffekt}
+
+Zum Photoeffekt kommt es wenn ein Photon auf ein Atom trifft und dabei ein inneres Elektron gelöst wird. Das Photon überträgt seine gesamte Energie, die sich dann aufteilt in Auslöseenergie und kinetische Energie des Elektrons. Das so angeregte Atom, kann wieder in den ursprünglichen Zustand zurückfallen indem eine Elektron einer äußeren Schale das "Loch" füllt, dabei wird ein Photon emittiert.
+
+\subsubsection{Paarbildung}
+
+Bei höheren Energien der $\gamma $-Photon (etwas die doppelte Ruheenergie des Elektrons $\approx \unit[1.02]{MeV}$) kann aus einem $\gamma $-Photon ein Elektronen-Positronen-Paar entstehen. Anschließen zerstrahlen Elektron und Positron wieder miteinander, wobei zwei Photonen ausgestrahlt werden. Bei dem Versuch wird dieser Effekt allerdings nicht zu beobachten sein, da die Energien zu niedrig sind.
+
+\subsection{Wirkungsweise eines Detektors}
+
+Um im Versuch $\gamma $-Quanten zu registrieren, wird ein Szintillator verwendet. Dieser besteht aus drei Komponenten.\\
+Im Szintillatorkristall werden durch auftreffende $\gamma $-Quanten Photonen emittiert diese Photonen werden dann hinter dem Kristall von einer geeigneten Photonenkatode aufgefangen. In der Kathode lösen sich durch den Photoeffekt Elektronen. Der Szintillator muss also transparent für die Photonen sein und möglichst viel emittieren.\\ 
+Der letzten Teil des Detektors ist der Sekundärelektronenvervielfacher (SEV), welcher die Elektronen der Kathode vervielfacht und somit in einen registrierbaren elektrischen Impuls verwandelt. Die Elektronen werden dabei wiederholt beschleunigt und treffen dann auf sogenannte Dynoden, aus denen sich wiederum Elektronen lösen. Dabei lässt sich die Anzahl der Elektronen um einen Faktor von bis zu einer Milliarde vergrößern.
+
+\subsection{Spektren} 
+
+Der elektrische Impuls aus dem Szintillator ist proportional zur Energie der einfallenden $\gamma $-Quanten. Es lässt sich also ein Spektrum aufnehmen, indem man die relative Häufigkeit (d.h. die Anzahl) von Impulsen über ihre Energie aufträgt. Hierbei gibt es Zwei Möglichkeiten zur Aufnahme der Spektren:
+
+\begin{description}
+\item[Einkanalanalyse:]Hier wird ein Spannungsbereich $\Delta U$ dessen Größe konstant ist, über den gesamt Messbereich geschoben. In jedem Intervall der Größe $\Delta U$ wird dann die Anzahl der Impulse gezählt.
+
+\item[Vielkanalanalyse:]Bei dieser Methode werden alle Spannungsbereiche gleichzeitig verarbeitet (also die Impulse gezählt). So kann in eine viel kürzeren Zeit das gesamte Spektrum aufgenommen werden.
+\end{description}
+
+\subsection{"Fehler" in Spektren}
+
+\subsubsection{Rückstreupeaks}
+
+Diese entstehen wenn die Photonen mit anderen Materialien als dem Kristall wechselwirken und dann auf diesen zurückgestreut werden.
+
+\subsubsection{Escape-Peaks}
+
+Diese Peaks kommen zustande, wenn die $\gamma $-Quanten, die bei der Paarbildung entstehen aus dem Kristall ohne weitere Wechselwirkung austreten. Sie kommen bei großen Energien vor.
+
+\subsubsection{Comptonkante}
+
+Diese Comptonkante ergibt sich aus der Obergrenze der Energieübertragung bei der Comptonstreuung bei $\Phi = \pi$. Überhalb diese maximalen Energiewertes tragen keine Photonen mehr zum Spektrum bei, weshalb es zu einem Abfall der registrierten Photonen kommt. Diese charakteristische Kante heißt Comptonkante (da sie sich aus dem Comptoneffekt ergibt).
+
+\subsubsection{Pile-Ups}
+
+Die $\gamma $-Quanten befinden sich einige Zeit lang im Szintillator und können dort unterschiedlich oft wechselwirken. Es kann nun dazu kommen dass mehrere Quanten gleichzeitig oder fast gleichzeitig auf die Photokathode treffen und sich somit gleichzeitig mehrere Elektronen lösen welche alle zu einem Impuls gezählt werden, was zu einem Peak höherer Energie führt. Die Mindestzeit, welche zwischen zwei Impulse liegen muss damit, es zu eine korrekten Auswertung kommt heißt Totzeit.
+
+\subsubsection{Röntgenlinien}
+
+Zu den Röntgenlinien kommt es, da wie schon erwähnt ein angeregtes Atom wieder in seinen Ausgangszustand fallen kann unter Abstrahlung von Energie durch Photonen. Die abgestrahlte Energie ist dabei für jedes Element spezifisch und ergibt eine charakteristische Linie im Spektrum. Die Frequenz der abgestrahlten Photonen lässt sich mit dem Mosleyschen Gesetz bestimmen:
+
+\begin{equation*}
+f= f_R \cdot \left( Z - K \right)^2 \left( \frac{1}{n_1^2} - \frac{1}{n_2^2}\right)
+\end{equation*}
+
+Wobei $f_R$ die Rydberg-Frequenz, Z die Ordnungszahl des Elements, K die Abschirmungskonstante und $n_1$ und $n_2$ die Hauptquantenzahlen der beiden Zustände des Elektrons sind. Für den $K_{\alpha}$-Übergang (also der Übergang von der zweiten zur ersten "Schale") gilt näherungsweise:
+
+\begin{equation*}
+f_{K_{\alpha}}= f_R \cdot \left( Z - 1 \right)^2 \cdot \frac{3}{4}
+\end{equation*}
+
+\section{Aufnahme von Impulshöhenspektren}
+\subsection{Impulshöhenspektren der $\gamma$-Strahlung von Cs-137, Na-22, Co-60 sowie das Untergrundspektrum mit dem 1024-Kanalbetrieb}
+
+Die Daten werden in diesem Versuch mit Hilfe des CASSSY-LAB-Programms aufgenommen. Es wird dazu der Vielkanalbetrieb des Systems verwendet. Der SEV wird so eingestellt, dass die effektive Zählrate für alle Präparate ungefähr gleich ist und im Bereich zwischen 1000/s und 1500/s liegt. Außerdem wird ein Untergrundspektrum aufgenommen um zu überprüfen welchen Einfluss diese hat.
+
+\subsection{Deutung der Impulshöhenspektren}
+
+Hier sollen die Spektren nun mit der Wechselwirkung zwischen Materie und Strahlung (siehe oben) gedeutet werden. Zunächst wird dazu anhand des Photopeaks (Escape-Peak) von Cs-137 eine Energieskalierung vorgenommen, damit die unterschiedlichen Spektren verglichen werden können. Die Energie  lässt sich berechnen mit $E= h \cdot f$, wobei sich f aus dem Mosleyschen Gesetz ergibt.\\
+Für die Materialien ergeben sich folgende theoretischen Werte:
+
+\begin{table}[H]
+\centering
+\caption{Theoretische Werte der Energien in keV}
+	\begin{tabular}{c|c c c }
+    & Cs-137 & Na-22 & Co-60 \\
+		\hline
+		Photopeak & 662 & 511 bzw. 1275 & 1173 bzw. 1333 \\
+		Comptonkante & 478 & 341 bzw. 1062 & 963 bzw. 1119 \\
+	    Rückstreupeak & 184 & 170 bzw. 213 & 210 bzw. 214 \\
+	    Röntgenlinie & 32 & & \\
+	\end{tabular}
+\end{table}
+
+Um die Anzahl der zu einem Photopeak beigetragen Elektronen abzuschätzen, verwendet man die Beziehung:
+
+\begin{equation*}
+n=\left( \frac{E}{\Delta E}\right)^2
+\end{equation*}
+
+Wobei $\Delta E$ die Halbwertsbreite des Peaks und E die Energie bei welcher er auftritt ist.
+
+\section{Bestimmung der Aktivität des Cs-137 Präparats}
+
+Als Aktivität eines Präparats bezeichnet man die Zerfallsrate. Diese ist definiert durch $ A =  \frac{dN}{dt}$. Dies Beschreibt die negative zeitliche Änderung der noch nicht zerfallenen Atome.\\
+Im Versuch verwendet man einen Detektor, bei welchem die Zählrate von der Energie des Quants E und dem Abstand d vom Detektor abhängt. Die Nachweiswahrscheinlichkeit p(E,d) eines Quants lässt sich aus einem Schaubild (siehe Vorbereitungshilfe) ablesen. Für die Aktivität ergibt sich dann:
+
+\begin{equation*}
+A = \frac{n}{p(E,d) \cdot (1-t)\cdot \lambda}
+\end{equation*}
+
+dabei ist n die Zählrate, p die Nachweiswahrscheinlichkeit, t die Totzeit in $\%$ und $\lambda$ die Zerfallswahrscheinlichkeit. Die Aktivität soll für verschiedene Abstände bestimmt werden und dann geprüft werden eine Totzeitkorrektur der Zählrate nötig ist.
+
+\section{Röntgenemission}
+ Materialien mit höheren Ordnungszahlen können Röntgenstrahlen emittieren. Die Frequenz dieser Strahlung  ergibt sich aus dem Mosleyschen (siehe oben).
+ 
+\subsection{Energiekalibrierung anhand der Ba und Pb-$K_{\alpha}$ Röntgenlinien}
+Zunächst wird $E_{K_{\alpha}}$-Kanal-Schaubild erstellt. Mit den bekannten Ba und Pa-$K_{\alpha}$ Röntgenlinien kann nun eine Energiekalibrierung gemacht werden. Dabei wir die durch die Röntgenlinien Messbare Energie über $Z^2$ aufgetragen werden (Mosleysches Gesetz).
+\subsection{Bestimmung des unbekannten Elements}
+Misst man die Energie eine Quants eines unbekannten Elements, so aus dem Diagramm ,welches in der letzten Aufgabe ermittelt wurde das dazugehörige $Z^2$ ablesen. Mit der Ordnungszahl Z kann dann das Element benannt werden.
+\section{Statistik}
+\subsection{Untersuchung von Untergrundstrahlung}
+Es soll die Untergrundstrahlung untersucht werden, dazu werden innerhalb 1 Sekunde 150 Spektren mit 256 Kanälen aufgenommen. Daraus werden 2 Stichproben gebildet:
+\begin{enumerate}
+\item Die Zählrate aus einem Teil eines Spektrums wird so aufintegriert, dass der Mittelwert der 150 Summen ungefähr 3 beträgt
+\item Die Gesamtzählrate der einzelnen Spektren wird verwendet.
+\end{enumerate}
+Es soll dann mit Excel die Häufigkeitsverteilung für verschiedene Klassen analysiert werden.
+\subsection{Mittelwert, Standardabweichung der Einzelmesswerte, Standardabweichung des Mittelwertes}
+Es sollen für beide Stichproben folgendes berechnet werden:
+Mittelwert:
+\begin{equation*}
+x_m=\frac{1}{N} \sum_{i=1}^N x_i
+\end{equation*}
+Standardabweichung der Einzelmesswerte:
+\begin{equation*}
+x=\sqrt{\frac{1}{N - 1} \sum_{i=1}^N (x_i-x_m)^2}
+\end{equation*}
+Standardabweichung des Mittelwerts $s_m$:
+\begin{equation*}
+s_m=\frac{s}{\sqrt{N}}
+\end{equation*}
+Es soll anschliessen geprüft werden, ob es sich hier um eine Poisson-Verteilung handelt, indem man die Standardabweichung der Einzelmesswerte mit dem Wursel aus dem Mittelwert vergleicht.
+\subsection{Graphische Darstellung von Poisson- und Gaußverteilung}
+Es sollen nun die Stichproben graphisch dargestellt werden, in ein Diagramm soll die Poisson-Verteilung und in einem anderen die Gaußverteilung eingetragen werden.\\ \\
+Poissonverteilung:
+\begin{equation*}
+P_p(k)=\frac{x^k_m \cdot e^{-x_m}}{k!}
+\end{equation*}
+Gaußverteilung:
+\begin{equation*}
+P_g(k)=\frac{1}{\sqrt{2 \pi} \cdot s}e^{-\frac{1}{2} \left( \frac{k-x_m}{x} \right)^2}
+\end{equation*}
+\subsection{$\chi^2$ Test}
+Es soll nun mit $\chi^2$-Tests die Übereinstimmung der gemessenen Häufigkeit mit den theoretischen Werten überprüft werden.\\ \\
+Seien $B$ die beobachteten Werte mit den entsprechenden erwarteten Werte $E$ für die einzelne Klassen $k$:
+\begin{equation*}
+\chi=\sum_k \frac{(B_k-E_k)^2}{E_k}
+\end{equation*}
+Es werden auch die Anzahl der Freiheitsgrade $v$ benötigt. Die erhält man aus der Anzahl der abgeschätzten Parameter $n$ und der Anzahl der verwendeten Klassen $k$.
+\begin{equation*}
+v=k-1-n
+\end{equation*}
+Die vermutete theoretische Verteilung passt dann zur Stichprobe, wenn der berechnete Wert $\chi^2$ kleiner ist als der Tabellenwert (Vorbereitungshilfe). Je kleiner $\chi^2$, umso besser passt die vermutete Verteilung zu den Messergebnissen.
+\end{document}

@@ -1,0 +1,272 @@
+\documentclass[a4paper,titlepage]{scrartcl}
+\pagestyle{plain}
+\usepackage[T1]{fontenc} 
+\usepackage[latin9]{inputenc}
+\usepackage[german]{babel}
+\usepackage{units}
+\usepackage{floatrow}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{pgfplots,pgfplotstable}
+\usepackage{numprint}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\numberwithin{equation}{section}
+
+\title{Versuch P2-50: Eigenschaften elektrischer Bauelemente\\Vorbereitung}
+\author{Gruppe Di-22\\Genti Saliu, Jonas Müller}
+\date{07. Juli 2014}
+
+\begin{document}
+	\begin{titlepage}
+		\maketitle
+		\thispagestyle{empty}
+	\end{titlepage}
+	
+	\newpage
+	\pagenumbering{roman}
+	\tableofcontents
+
+	\newpage
+	\pagenumbering{arabic}
+	
+	\section{Grundlagen}
+	In diesem Abschnitt werden Begriffe und Phänomene eingeführt und erklärt, die für das Verständnis und die Durchführung des Versuchs vonnöten sind.
+	
+	\subsection{Wheatstonesche Brückenschaltung}
+	Diese ist eine Messeinrichtung zur Bestimmung von unbekannten Widerständen oder Messung von kleinen ohmschen Widerstandsänderungen.
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.6\textwidth]{bilder/wheatstone.png}\\
+			\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:wheatstone}
+		\end{tabular}
+		\caption{Aufbau der Wheatstone-Brücke}
+		\label{fig:wheatstone}
+	\end{figure}
+	Abbildung \ref{fig:wheatstone} zeigt die Wheatstonesche Brückenschaltung, bestehend aus 4 Widerständen (eins davon unbekannt), einem Spannungsmessgerät und Spannungsquelle. \\ \\
+	Zwei Widerstände, jeweils $R_1$, $R_2$ oder $R_4$, $R_5$  bilden einen Spannungsteiler, die Schaltung besteht damit aus 2 zueinander parallelen Spannungsteilern, die durch das Spannungsmessgerät überbrückt werden, welches den Spannungsunterschied zwischen den Spannungsteilern anzeigt.\\ \\
+	Um den unbekannten Widerstand zu bestimmen, führt man einen Abgleich durch, sodass am Spannungsmessgerät $U_5$ keine Spannungsdifferenz abfällt, also $U_5=0$. Mit der Kirchhoffschen Maschenregel erhält man:
+	\begin{equation*}
+	U_2+U_5-U_4=0 \quad \Rightarrow \quad U_2=U_4
+	\end{equation*}
+	und
+	\begin{equation*}
+	U_1+U_5-U_3=0 \quad \Rightarrow \quad U_1=U_3
+	\end{equation*}
+	Dies lässt sich in der unteren Form umschreiben:
+	\begin{equation*}
+	\frac{U_2}{U_1}=\frac{U_4}{U_3}
+	\end{equation*}
+	Anwenden des Ohmschen Gesetzes ergibt:
+	\begin{equation*}
+	\frac{R_2 I_2}{R_1 I_1}=\frac{R_4 I_4}{R_3 I_3}
+	\end{equation*}
+	Da $I_1=I_2$ und $I_3=I_4$ (aufgrund der Reihenschaltung von den Widerständen) gilt:
+	\begin{equation*}
+	\frac{R_2}{R_1}=\frac{R_4}{R_3}
+	\end{equation*}
+	Aus dieser Beziehung kann der unbekannte Widerstand bestimmt werden.
+	
+	\subsection{Leitfähigkeit}
+	\subsubsection{Bändermodell}
+	Das Bändermodell ist ein quantemechanisches Modell zur Beschreibung von elektronischen Energiezuständen in einem ideallen Einkristall und eignet sich u.a. zur Erklärung der elektrischen Leiteigenschaften von Festkörpern.\\ \\
+	Betrachtet man ein einzelnes Atom, so liegen seine Energieniveaus diskret und scharf voneinander getrennt. Bei Festkörpern weisen deren Atome eine strenge Anordnung in einem Gitterkristall auf und damit wechselwirken benachbarte Atome miteinander. Dies hat zur Folge, dass neue Energieniveaus entstehen und die scharfen Energieniveaus in Unterniveaus aufgespaltet werden. Je mehr Atome miteinander wechselwirken, umso feiner wird die Aufspaltung des Energieniveaus in  Unterniveaus. Diese fasst man als \emph{Energieband} zusammen.
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.8\textwidth]{bilder/baendermodell.png}\\
+			\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:baender}
+		\end{tabular}
+		\caption{Veranschaulichung des Bändermodells am Beispiel von Magnesium}
+		\label{fig:baendermodell}
+	\end{figure}
+	Zwischen den Bändern liegen Energielücken $E_g$. Die Breite der Energiebänder ist unterschiedlich, je nachdem wie stark die Elektronen am Atom gebunden sind und je weiter entfernt vom Atomkern sie sich befinden (siehe Abbildung \ref{fig:baendermodell}).\\ \\
+	Im Festkörper treten voll besetzte, teilweise besetzte oder leere Energiebänder auf und sind für den Leitungsprozess ausschlaggebend: voll besetzte und leere Bänder tragen nicht zur Leitfähigkeit bei.\\ \\
+	Das energisch tiefste Band, das nicht vollbesetzt ist, wird deshalb als \emph{Leitungsband} bezeichnet, das darunterliegende Band heißt \emph{Valenzband} und ist vollbesetzt.\\ \\
+	Anhand der Lage der Bänder werden Festkörper in Metalle, Isolatoren und Halbleiter eingeteilt.
+	\subsubsection{Metalle}
+	Bei Metallen ist das Leitungsband bereits bei sehr tiefen Temperaturen teilweise besetzt, was sie zu sehr guten Leitern macht. Bei einwertigen Metallen ist das höchste besetzte Energieband zur Hälfte aufgefüllt, bei mehrwertigen überlappen sich die äußeren Energiebänder.
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.3\textwidth]{bilder/baendermodell-metall.png}\\
+			\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:baender}
+		\end{tabular}
+		\caption{Energiebänder in Metallen}
+		\label{fig:baendermetall}
+	\end{figure}
+	Aufgrund dieser Überlappung genügen bereits kleine elektrische Feldstärken, um ein Elektron in den nächsthöheren Zustand anzuheben. Das bewirkt, dass immer freie Elektronen vorhanden sind, die zum Ladungstransport beitragen. Mit steigender Temperatur nimmt jedoch de Leitfähigkeit aufgrund der Streuung und der Verminderung der Beweglichkeit von Elektronen ab.
+	\subsubsection{Isolatoren}
+	Das Leitungsband eines Isolators ist unbesetzt und der Abstand zwischen Valen- und Leitungsband so groß, dass Valenzelektronen diesen auch bei hohen zugeführten Energiebeträgen nicht erreichen können. Deshalb sind keine freien Elektronen zum Ladungstransport vorhanden.
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.3\textwidth]{bilder/baendermodell-isolator.png}\\
+			\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:baender}
+		\end{tabular}
+		\caption{Energiebänder in Isolatoren}
+		\label{fig:baenderisolator}
+	\end{figure}
+	\subsubsection{Halbleiter}
+	Die Leitfähigkeit von Halbleitern liegt zwischen der von Leitern und Isolatoren. Bei sehr tiefen Temperaturen ist das Leitungsband leer und das Valenzband voll besetzt, dementsprechend ist die Leitfähigkeit bei $T=\unit[0]{K}$ Null.\\
+	Ausserdem ist die Bandlücke zwischen den beiden Bändern größer als bei Metallen und kleiner als bei Isolatoren, sodass Elektronen mit steigender Temperatur aufgrund der thermischen Anregung aus dem Valenz- in das Leitungsband gelangen können.
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.3\textwidth]{bilder/baendermodell-halbleiter.png}\\
+			\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:baender}
+		\end{tabular}
+		\caption{Energiebänder in Halbleitern}
+		\label{fig:baenderhalbleiter}
+	\end{figure}
+	An den frei gewordenen Stellen im Valenzband wird eine \emph{Löcherleitung} möglich, dieses Loch/Lücke kann nämlich von einem benachbarten Elektron besetzt werden usw.\\ \\
+	Diese Art von Leitfähigkeit entsteht durch:
+	\begin{itemize}
+		\item \textbf{Verunreinigungen}\\
+		Es können Fremdatome vorhanden sein, die freie Ladungsträger in das Material einbringen.
+		\item \textbf{Aufbrechen der Kristallbindungen}\\
+		Mit steigender Temperatur gelangen immer mehr Elektronen vom Valenz- in das Leitungsband und somit sind auch mehr freie Elektronen im Halbleiter anzutreffen.
+		\item \textbf{Oberflächen-Leitfähigkeit}\\
+		Da Atome an der Oberfläche von Materialien keine Nachbarn haben, fehlen Bindungspartner für die Valenzelektronen.
+	\end{itemize}
+	Um Leitung bei Halbleitern also zu ermöglichen, bringt man gezielt Fremdatome ins Material ein. Diesen Vorgang bezeichnet man als \textbf{Dotierung}. Man unterscheidet zwischen \emph{n-Dotierung} und \emph{p-Dotierung}:
+	\begin{itemize}
+		\item Ein \textbf{n-dotiertes} Halbleiter verfügt über mehr freie Elektronen als Löcher. Dies geschieht, indem man Materialien mit mehr Valenzelektronen als das Halbleitermaterial in das Halbleiter einbaut (z.B. Silizium (Si) wird mit Phosphor (P) dotiert). Das übrige Valenzelektron der Fremdatome kann keiner Bindung eingehen. Jedes eingebaute Atom bringt somit ein freies Elektron in den Werkstoff ein. Solche Atome werden \emph{Donator} genannt.
+		\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.4\textwidth]{bilder/n-dotierung.png}\\
+			\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:dotierung}
+		\end{tabular}
+		\caption{n-Dotierung im Siliciumkristallgitter mit Phosphor}
+		\label{fig:n-dotierung}
+	\end{figure}
+	\item Ein \textbf{p-dotiertes} Halbleiter besitzt einen Überschuss an Löchern. Solche Halbleiter entstehen durch Dotieren mit einem niederwertigeren Element als das Halbleiter (z.B. Silizium (Si) wird mit Aluminium (Al) dotiert). Ein solches Element nimmt schnell ein zusätzliches Elektron auf (deshalb wird es \emph{Akzeptor} genannt) und an der Stelle im Halbleiter, wo sich das aufgenommene Elektron vorher befand, ensteht ein Loch.\\
+		Löcher in Halbleitern können von Elektronen benachbarter Atomen besetzt werden und somit entstehen dort weiter Löcher, damit werden also die Löcher transportiert.
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.4\textwidth]{bilder/p-dotierung.png}\\
+			\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:dotierung}
+		\end{tabular}
+		\caption{p-Dotierung im Siliciumkristallgitter mit Aluminium}
+		\label{fig:p-dotierung}
+	\end{figure}
+	\end{itemize}
+	Legt man \emph{p}- und \emph{n}-dotierte Halbleiter sehr nahe (\emph{p-n}-Übergang) kann man in deren Grenzschicht interessante Effekte beobachten. Diese Effekte werden für den Fall ohne und mit angelegter Spannung beobachtet:
+	\begin{itemize}
+		\item \textbf{Ohne angelegte Spannung}:
+		Dotierte Halbleiter sind im Grundzustand ungeladen, die Verbindung zweier andersartig dotierter Halbleitermaterialien ist insgesamt auch neutral.\\
+		Aufgrund der entstehenden Konzentrationsgradienten der frei beweglichen Ladungsträger, wandern sie durch Diffusion in das jeweils andere Halbleitermaterial: die Elektronen des \emph{n-dotierten} Halbleiters streben in das \emph{p-dotierte} Material und rekombinieren dort mit Löchern, Löcher des \emph{p-dotierten} Materials diffundieren auf die n-Seite und rekombinieren dort mit Elektronen.
+		\begin{figure}[H]
+			\centering
+			\begin{tabular}{@{}r@{}}
+				\includegraphics[width=0.6\textwidth]{bilder/pn-ohne.png}\\
+				\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:pn}
+			\end{tabular}
+			\caption{Effekt im p-n-Übergang ohne angelegte Spannung}
+			\label{fig:pnohne}
+		\end{figure}
+		Die ortsfesten Dotierungsatome, die zu den Ladungen gehörten, werden jetzt nicht mehr elektrisch kompensiert und verursachen ein elektrisches Feld, das auf die verbleibenden freien Ladungsträger eine Kraft ausübt und eine Driftbewegung verursacht. Diese Bewegung ist der durch Diffusion verursachten Bewegung entgegengesetzt und es stellt sich irgendwann zwischen den beiden ein Gleichgewicht ein.\\ \\
+		Das entstandene elektrische Feld verdrängt die verbleibenden Ladungsträger zurück, so dass beiderseits an der Grenze zwischen p- und n-Material eine Zone ohne freie Ladungsträger entsteht, in der nur noch die ortsfesten Raumladungen der ionisierten Dotierungsatome verbleiben (Raumladungszone, RLZ).\\ \\
+		Die Zonen abseits der Raumladungszone sind neutral. Die Breite der Raumladungszone hängt stark von der Temperatur ab.
+		\item \textbf{Mit angelegter Spannung}: Je nach Polung ergeben sich zwei unterschiedliche Fälle:
+		\begin{enumerate}
+			\item \textbf{Minus an der p-Zone}:
+			Legt man eine Spannung mit Minuspol an der p-Zone, so rekombinieren die Elektronen mit den verbliebenen Löchern und verstärken das elektrische Feld, das im Inneren der Raumladungszone wirkt. Die Raumladungszone wird breiter. Elektronen können deshalb nicht mehr die Raumladungszone überqueren, selbst wenn sie hohe Geschwindigkeiten haben, die Raumladungszone "`sperrt"' die Elektronen, weshalb sie auch \emph{Sperrschicht} genannt wird.
+			\begin{figure}[H]
+				\centering
+				\begin{tabular}{@{}r@{}}
+					\includegraphics[width=0.4\textwidth]{bilder/minus-an-p.png}\\
+					\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{vorbereitungshilfe}
+				\end{tabular}
+				\caption{Diode in Sperrichtung}
+				\label{fig:minus-an-p}
+			\end{figure}
+			\item \textbf{Plus an der p-Zone}:
+			Legt man eine Spannung mit positivem Pol an der p-Zone, so gelangen durch die Spannungsquelle Elektronen in die n-Zone, die Raumladungszone wird dünner und ein Stromfluss im pn-Übergang wird möglich, da die angelegte Spannung dem Drift-Feld im Inneren entgegen wirkt. Diese Polung nennt man deshalb \emph{Durchlassrichtung}.
+			\begin{figure}[H]
+				\centering
+				\begin{tabular}{@{}r@{}}
+					\includegraphics[width=0.4\textwidth]{bilder/plus-an-p.png}\\
+					\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{vorbereitungshilfe}
+				\end{tabular}
+				\caption{Diode in Durchlassrichtung}
+				\label{fig:plus-an-p}
+			\end{figure}
+		\end{enumerate}
+	\end{itemize}
+	\subsection{Bauteile}
+	\subsubsection{Dioden}
+	Dioden bestehen aus dem zuvor beschriebenen pn-Übergang und können daher Strom nur in einer Richtung durchlassen. Bei Dioden werden drei Betriebsarten unterschieden, die anhand der Dioden-Kennlinie (durchgelassener Strom über angelegte Spannung an der Diode) aufzuzeigen sind:
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.5\textwidth]{bilder/diode-kennlinie.png}\\
+			\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:diode}
+		\end{tabular}
+		\caption{Dioden-Kennlinie}
+		\label{fig:diode-kennlinie}
+	\end{figure}
+	\begin{itemize}
+		\item \textbf{Durchlassbereich}: in diesem Bereich wird die Diode in Durchlassrichtung betrieben. Mit zunehmer Spannung nimmt der Strom zunächst geringfügig zu, ab einem bestimmten Spannungswert (Schwellenspannung $U_S$) steigt der Strom exponentiell an.
+		\item \textbf{Sperrbereich}: In diesem Bereich sperrt die Diode, sodass keiner bzw. nur ein sehr geringer Strom durch die Diode fließen kann.
+		\item \textbf{Durchbruchbereich}: Beim Erreichen einer sogenannten \emph{Durchbruchspannung} $U_{BR}$, die diodenabhängig ist, befindet man sich in diesem Bereich. Die Diode bricht durch und es fließt ein Strom.
+	\end{itemize}
+	\subsubsection{Z-Dioden}
+	Diese Dioden sind besonders hoch dotiert und besitzen einen sehr schmalen pn-Übergang. Ihre Durchbruchspannung ist genau spezifiziert und ist für den dauerhaften Betrieb in Sperrrichtung ausgelegt. Dabei tritt der Zener-Effekt auf, der bewirkt, dass ab einer bestimmten elektrischen Feldstärke Elektronen aus ihren Kristallbindungen gelöst werden und einen Strom $I_Z$ verantworten. Die freigewordenen Ladungsträger werten vom elektrischen Feld beschleunigt und lösen weitere Elektronen aus den Bindungen heraus bis es zum Zener-Durchbruch kommt. Dieser Effekt wird auch als \emph{Lawineneffekt} bezeichnet und ist stark temperaturabhängig.
+	\subsubsection{Optoelektrische Bauelemente}
+	Diese Bauelemente beruhen auf dem Photoeffekt, bei dem durch Beleuchtung einer Fotoplatte Elektronen von den Photonen aus ihren Kristallbindungen herausgeschlagen werden und zur Erhöhung der Leitfähigkeit des Photowiderstandes beitragen.
+	\subsubsection{Supraleiter}
+	Bei diesen Materialien fällt der Widerstand unterhalb einer kritischen Temperatur $T_C$ auf quasi $\unit[0]{\Omega}$ ab. Dieser Effekt erklärt sich mithilfe sogenannter Cooper-Paare, die durch Polarisationswechselwirkungen auf dem Gitter entstehen können.\\ \\
+	Der Widerstand entsteht in der Regel dadurch, dass Elektronen mit Fehlerstellen des Gitters und Gitterschwingungen wechselwirken. Durch die Kopplung der Elektronen im Supraleiter zu Cooperpaaren kann jedoch keine Energie mehr an das Gitter abgegeben werden, das ermöglicht einen widerstandslosen Stromfluss.
+	\subsubsection{Piezoelektrischer Effekt}
+	Dieser Effekt tritt bei druckabhängigen Bauteilen auf. Wirkt eine äußere Kraft auf das Piezoelement, so wird das Material verformt und die Ladungsträger werden verschoben. Es entstehen Dipole, die eine nach außen sichtbare Spannung erzeugen. Diesen nennt man \emph{direkten piezoelektrischen Effekt}.\\ \\
+	Legt man eine Spannung an ein Piezoelement an, so kommt es zur inneren Polarisation und einer Verformung des Materials (\emph{indirekter piezoelektrischer Effekt}).
+	\section{Aufgaben}
+	\subsection{Untersuchung $R(T)$-Abhängigkeit verschiedener Bauteile mit Wheatstonescher Brückenschaltung für verschiedene Temperaturen}
+	In diesem Versuchsteil soll die Temperaturabhängigkeit von Heißleiterwiderstand (NTC) und Kaltleiterwiderstand (PT100)  untersucht werden. Der Widerstand soll mithilfe der Wheatstoneschen Brückenschaltung zwischen Zimmertemperatur und $\unit[200]{^\circ C}$ gemessen werden.\\ \\
+	Für NTC ist zu erwarten, dass der Widerstand mit steigender Temperatur abnimmt und dabei folgende Gesetzmäßigkeit erfüllt:
+	\begin{equation*}
+	R(T)=a \cdot e^{\frac{b}{T}}
+	\end{equation*}
+	Die Koeffizienten $a$ und $b$ können durch lineare Regression aus folgender Gleichung bestimmt werden:
+	\begin{equation*}
+	\ln \left( R(T) \right) = b \cdot \frac{1}{T} + \ln (a)
+	\end{equation*}
+	Beim Kaltleiterwiderstand PT100 erwarten wir, dass der Widerstand mit abnehmender Temperatur abfällt nach folgendem Zusammenhang:
+	\begin{equation*}
+	R(T)=R_0 \cdot (1 + \alpha T)
+	\end{equation*}
+	wobei $R_0=\unit[100]{\Omega}$ bei $\unit[0]{^\circ C}$ entspricht. Die Koeffizienten lassen sich aus den Messdaten wieder über Regressionsrechnung bestimmen.
+	
+	\subsection{Kennlinien verschiedener Bauteile}
+	Es sollen in diesem Versuch die Kennlinien verschiedener Bauteile am USB-Oszilloskop aufgenommen werden, wobei die Dioden auch auf ihre Frequenzabhängigkeit qualitativ untersucht werden sollen.\\ \\
+	Die Stromstärke kann nicht direkt am Oszilloskop aufgetragen werden, wir arbeiten hier nur mit Spannungen. Deshalb wird auf die eine Achse die am Bauteil angelegte Spannung, auf die andere Achse die Spannung eines in Reihe geschalteten Referenzwiderstands gelegt.\\ \\
+	Dabei ist ein Varistor (spannungsabhängiger Widerstand) als Schutz gegen induzierte Spannungen an empfindlichen Bauteilen zu verwenden. Der Varistor wird parallel zu dem Aufbau angeschlossen, durch seine Eigenschaft bei hohen Induktionsspannungen einen stark abfallenden Widerstandswert zu haben, kann durch den Varistor ein Großteil des Induktionsstromes abfließen um so die parallel dazu empfindliche Schaltung zu schützen.
+	Eine Spannungsstabilisierung mit Zenerdiode kann nach folgender Schaltung realisiert werden:
+		\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.3\textwidth]{bilder/aufgabe2.png}\\
+			\footnotesize\sffamily\textbf{Quelle:} http://www.elektronik-kompendium.de
+		\end{tabular}
+		\caption{Schaltung zur Spannungsstabilisierung}
+		\label{fig:aufgabe2}
+	\end{figure}
+	Dabei wird die Durchbruchspannung (Zenerspannung) der Zener-Diode ausgenutzt. Die Diode bildet zusammen mit einem Vorwiderstand einen Spannungsteiler und ermöglicht eine stabile Zener-Spannung.
+	\subsection{Verhalten eines Phototransistors bei verschiedenen Beleuchtungsstärken}
+	Der Phototransistor hat im Unterschied zu normalen Transistoren eine für Licht offene Basis-Kollektor Sperrschicht. Folglich kann dieser aufgrund des Photoeffekts durch Regulierung des Photonenstroms bzw. Lichteinfalls gesteuert werden.\\ \\
+	Es sollen nun bei verschiedenen Lichtintensitäten, die also verschiedenen Basisströmen entsprechen, Kennlinien der Photodiode erstellt werden. Daraus kann im Anschluss graphisch ein Zusammenhang zwischen Sperrstrom und Beleuchtungsstärke gefunden werden.
+	\subsection{Piezoelektrischer Effekt am Piezoelement}
+	Aufgrund des Aufbaus mancher Stoffe entsteht bei Kompression ihrer Struktur durch Ausübung von Druck eine Spannung. Man nennt diesen Effekt den Piezoeffekt. Dieser Effekt soll überprüft werden.\\ \\
+	Das auch die Umkehrung des Piezoeffekts möglich ist soll ein qualitatives Experiment zeigen, in dem das Piezoelement direkt an den Frequenzgenerator angeschlossen wird. Es wird erwartet, dass dabei hörbare Schallwellen entstehen.
+	\subsection{Sprungtemperatur eines Hochtemperatursupraleiters}
+ Im letzten Versuch soll der bereits oben erklärte Supraleiter im Mittelpunkt stehen. Nach einer Abkühlung des Leiters auf etwa \unit[77]{K} (flüssiger Stickstoff) soll dann der Widerstand des Supraleiters in \unit[5]{K}-Schritten gemessen werden. Der Widerstand eines Supraleiters sinkt bei abnehmender Temperatur zuerst völlig normal. Ab der Sprungtemperatur ist der Widerstand jedoch Null. Dieser Sprung bzw. die Sprungtemperatur soll untersucht werden.
+\newpage
+\bibliographystyle{plain}
+\bibliography{quellen}
+
+\end{document}

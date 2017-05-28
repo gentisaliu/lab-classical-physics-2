@@ -1,0 +1,218 @@
+\documentclass[a4paper,titlepage]{scrartcl}
+\pagestyle{plain}
+\usepackage[T1]{fontenc} 
+\usepackage[latin9]{inputenc}
+\usepackage[german]{babel}
+\usepackage{units}
+\usepackage{floatrow,enumitem}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{pgfplots,pgfplotstable}
+\usepackage{numprint}
+\usepackage{graphicx}
+
+\numberwithin{equation}{section}
+
+\title{Versuch P2-16: Laser A\\Vorbereitung}
+\author{Gruppe Di-22\\Genti Saliu, Jonas Müller}
+\date{30. Juni 2014}
+
+\begin{document}
+	\begin{titlepage}
+		\maketitle
+		\thispagestyle{empty}
+	\end{titlepage}
+	
+	\newpage
+	\pagenumbering{roman}
+	\tableofcontents
+
+	\newpage
+	\pagenumbering{arabic}
+
+	\section{Grundlagen}
+	
+	\subsection{Interferenz und Beugung}
+	Interferenz beschreibt die Überlagerung von zwei oder mehr Wellen nach dem Superpositionsprinzip. Löschen sich die Wellen dabei gegenseitig aus, spricht man von \emph{destruktiver} Interferenz, bei Verstärkung der Amplituden spricht man von \emph{konstruktiver} Interferenz. Das Muster aus Stellen konstruktiver und destruktiver Interferenz wird als Interferenzmuster bezeichnet.\\ \\
+	Die Beugung oder Diffraktion ist die Ablenkung von Wellen an einem Hindernis. Durch Beugung kann sich eine Welle in den Raumbereichen ausbreiten, die auf rein geradem Weg durch das Hindernis versperrt wären. Zur Beugung kommt es durch Entstehung neuer Wellen entlang einer Wellenfront gemäß dem huygens-fresnelschen Prinzip. Diese können durch Überlagerung zu Interferenzerscheinungen führen.
+	
+	\subsection{Kohärenzlänge}
+	Die Kohärenzlänge ist der maximale Weglängen- oder Laufzeitunterschied, den zwei
+Lichtstrahlen aus derselben Quelle haben dürfen, damit bei ihrer Überlagerung noch ein (räumlich und zeitlich) stabiles Interferenzmuster entsteht. Anders ausgedrückt, versteht man unter Kohärenzlänge die Entfernung, bis zu der man die Positionen der Nulldurchgänge im Wellenfeld noch sicher vorhersagen kann, wenn man den Abstand zweier benachbarter Nulldurchgänge kennt.
+	
+	\subsection{Brewsterwinkel}
+	Treten elektromagnetische Wellen in ein Medium mit einem anderen Brechungsindex ein, so wird immer ein Teil der Welle reflektiert. Für einen bestimmten Winkel $\theta_B$ zur Einfallsebene wird das einfallende Licht verlustfrei transmittiert, d.h. es tritt keine Reflektion auf.
+	
+	\subsection{LASER}
+	LASER steht für Light Amplification by Stimulated Emission of Radiation oder auf Deutsch für ''Lichtverstärkung durch stimulierte Emission von Strahlung''. Er hat drei Bestandteile:
+	\begin{itemize}
+		\item \textbf{Aktives Medium} - Hier entstehen durch den optischen Übergang angeregter Atome oder Moleküle in einen energetisch günstigeren Zustand Photonen. Dabei ändert sich das Energieniveau eines Elektrons in einem Atom oder Molekül und es werden Photone freigesetzt. Das Medium kann gasförmig, flüssig oder fest sein.
+		\item \textbf{Pumpe} - Durch Einführen von Energie in das Lasermedium wird eine Besetzungsinversion erzeugt. In einem Medium mit nur zwei Energieniveaus sind im thermodynamischen Gleichgewicht Zustände geringer Energie mit höherer Wahrscheinlichkeit besetzt als Zustände höherer Energie. Die Inversion kann erzeugt werden, wenn das Medium mehr als 2 Niveaus und unterschiedliche Lebensdauern der angeregten Niveaus hat. Durch das Hineinpumpen von Energie in das Lasermedium wird dieses aus seinem thermodynamischen Gleichgewicht geholt, und es kann eine Inversion entstehen. Das Pumpen kann optisch (Einstrahlung von Licht) oder elektrisch (z. B. Gasentladung, elektrischer Strom bei Laserdioden) die Atome oder Moleküle des Lasermediums in angeregte Zustände bringen.
+		\item \textbf{Resonator (Modenselektion)} - Ein Resonator sorgt dafür, dass alle Photonen, die im Lasermedium entstehen, bis auf die in Impuls und Energie vom Resonator bevorzugten Photonen den Laser verlassen. Die Selektion des Resonators bewirkt, dass nur Photonen mit gleicher Energie und gleichem Impuls in das Lasermedium zurückgekoppelt werden. Über den Effekt der stimulierten Emission werden im besetzungsinvertierten Lasermedium von den zurückgekoppelten Photonen verstärkt Photonen mit ebenfalls gleicher Energie und gleichem Impuls erzeugt. Dies ist der Grund für die starke Kohärenz und Einfarbigkeit von Laserlicht.
+	\end{itemize}
+	Zunächst werden Atome im Lasermedium durch die eingespeiste Leistung von unteren Energieniveaus (z. B. Grundzustand) in energetisch höhere, d.h. angeregte Zustände versetzt. Dabei soll die mittlere Zerfallszeit der angeregten Zustände (in der Regel durch spontane Emission) möglichst lang sein. Somit bleibt die Pumpenergie dort längere Zeit gespeichert, sodass eine Besetzungsinversion aufgebaut werden kann. Nun genügt eine Anregung eines Atoms durch ein Photon mit der auszustrahlenden Energie, damit das angeregte Atom wieder in seinen Grundzustand zurückfällt und dabei ein Photon der identischen Energie (also identischer Wellenlänge und Frequenz) sowie identischer Phasenlage wie das stimulierende Photon aussendet. Beide Photonen bewegen sich in die gleiche Richtung. Durch diese Verdoppelung des stimulierenden Photons wirkt das Lasermedium wie ein Lichtverstärker. Das frisch entstandene zweite Photon kann dann seinerseits andere angeregte Atome zur Ausstrahlung stimulieren, und es kommt zu einer Kettenreaktion.\\ \\
+Zu dieser Verstärkerwirkung kommt dann noch hinzu, dass sich die Anordnung in einem Resonator (s. u. bei Laserresonator) befindet, der durch seine Abmessungen auf die gewünschte Wellenlänge abgestimmt ist. So hat ein Photon bei mehrfachem Durchlaufen des Lasermediums genügend Chancen, andere Atome zu stimulieren. Der Resonator ist im Prinzip aus zwei Spiegeln an den Enden der Anordnung gebildet. Durch diese Spiegel wird auch die Richtung des erzeugten Lichtstrahls endgültig festgelegt. Einer der beiden Spiegel ist teildurchlässig ausgeführt, so dass ein Teil des Lichts austreten und seiner Nutzung zugeführt werden kann.
+	
+	\subsection{Helium-Neon-Laser}
+	Zunächst werden die Helium-Atome in den angeregten Zustand versetzt. Durch elastische Stöße wird die Energie an die Neon-Atome abgegeben, deren angeregte Zustände auf fast der identischen Energie wie die des Heliums liegen und sich aufgrund ihrer Langlebigkeit besser geeignet sind für stimulierte Emission.
+	
+	\subsection{Babinetsches Theorem}
+	Das Babinetsche Theorem besagt, dass die Beugungsbilder zweier zueinander komplementärer Blenden ausserhalb des Bereiches, in den die geometrisch-optischen Abbildung fällt, gleich sind. Das Prinzip lässt sich mithilfe des Huygenschen Prinzips erklären, der besagt, dass Wellen beim Treffen auf Oberflächen an der Stelle neue Elementarwellen erzeugen, die das Beugungsmuster erzeugen. Bei komplementaren Blenden befinden sich diese Oberflächen an der gleichen Stelle und erzeugen deshalb ein identisches Beugungsmuster.
+	
+	\subsection{Abbesche Theorie der Bildentstehung im Mikroskop}
+	Dies ist eine vom deutschen Physiker Ernst Abbe entwickelte Theorie der mikroskopichen Abbildung, wonach für die Bildentstehung nach Korrektur der Abbildungsfehler die Beugung des Lichtes am Objekt massgebend ist und das Auflösungsvermögen durch die Wellenlänge des eingestrahlten Lichtes begrenzt wird. Dabei kommt es für die Auflösung der Objektstrukturen auch auf die Beleuchtungsart (senkrechter oder nicht senkrechter Einfall) an.
+	
+	\section{Brewsterwinkel}
+	\subsection{Brewster-Fenster im Laser}
+	In diesem Versuch wird das Laser mit 'Brewster-Fenstern' abgeschlossen, also Glasscheiben, die einen Brewster-Winkel zum Laserstrahlverlauf bilden. Die Glasscheiben müssen vorher sorgfältig geputzt werden. Dabei wird der Einfallswinkel des Strahls zur Glasscheibe variiert und die Veränderung der Lichtintensität soll beobachtet werden.\\ \\
+	Der Sinn dieses Verfahrens liegt darin, senkrecht zur Einfallsebene fallendes (s-polarisiert) Licht zum Teil zu reflektieren (abzuschwächen) und parallel zur Einfallsebene fallendes (p-polarisiertes) Licht komplett zu transmittieren. Damit reduziert man den Anteil des s-polarisierten Lichts am Laserstrahl.
+	\subsection{Bestimmung von Brewsterwinkel und Brechungsindex}
+	Es sollen nun der Brewsterwinkel und Brechungsindex der Glasscheibe bestimmt werden.\\ \\
+	Ersteres lässt sich einfach durch Einstellen einer minimalen Strahlintensität an der Zimmerdecke und Messung des Winkels des Plattenhalters bestimmen. Alternativ kann man den Winkel auch bestimmen, indem man das Maximum der Transmission mit einem Si-Photoelement mit Messinstrument beobachtet. Diese Methode ist ungenauer, da bei hoher Lichtintensität kleine Differenzen schwer messbar sind.\\ \\
+	Den Brechungsindex bestimmt man ausgehend vom snelliuschen Brechungsgesetz \cite{wiki:brewster}:
+	\begin{equation*}
+	n_1 \sin (\theta_1)=n_2 \sin(\theta_2)
+	\end{equation*}
+	
+	Wie aus Abbildung \ref{fig:brewster} leicht zu erkennen ist, verläuft der gebrochene Strahl senkrecht zum reflektierten Strahl:
+	\begin{eqnarray*}
+	\theta_1&=&\theta_B\\
+	\theta_2&=&\unit[180]{^\circ} - \unit[90]{^\circ} - \theta_B=\unit[90]{^\circ} - \theta_B
+	\end{eqnarray*}
+	Umstellen nach $\theta_B$ ergibt:
+	\begin{equation*}
+	\theta_B=\arctan \left( \frac{n_2}{n_1} \right)
+	\end{equation*}
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.6\textwidth]{bilder/brewster.png}\\
+			\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:brewster}
+		\end{tabular}
+		\caption{Darstellung des Brewster-Winkels}
+		\label{fig:brewster}
+	\end{figure}
+	
+	\section{Beugung am Spalt, Steg, Kreisloch, Kreisblende und Kante}
+	\subsection{Einzelspalt}
+	Es soll in diesem Versuch die Spaltbreite eines Einzelspaltes aus der Lage der Beugungsmaxima und -minima bestimmt werden.\\ \\
+	Wir betrachten den Gangunterschied $\Delta s$ der beiden äußerten Strahlen in Abhängigkeit vom Winkel $\alpha$, der zwischen optischer Achse und Strahlen umschlossen wird.
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.6\textwidth]{bilder/efspalt.jpg}\\
+			\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:beugung}
+		\end{tabular}
+		\caption{Gangunterschied der äusserten Strahlen am Einzelspalt}
+		\label{fig:einzelspalt}
+	\end{figure}
+	
+	Es wird an Abbildung \ref{fig:einzelspalt} ersichtlich, dass Folgendes gilt:
+	\begin{equation}
+		\label{eq:einzelspalt1}
+		\Delta s = d \cdot \sin \alpha
+	\end{equation}
+	
+	Für Intensitätsminima muss für den Gangunterschied gelten:
+	\begin{equation}
+		\label{eq:einzelspalt2}
+		\Delta s = n \cdot \lambda \quad n \in \mathbb{N}
+	\end{equation}
+	
+	Für Intensitätsmaxima dagegen:
+	\begin{equation}
+		\label{eq:einzelspalt3}
+		\Delta s = \left( n + \frac{1}{2} \right) \cdot \lambda \quad n \in \mathbb{N}
+	\end{equation}
+	
+	Man kann zur Veranschaulichung den Lichstrahl in $2n$ Teilstrahlen aufteilen, von denen beim $n$-ten Minimum bzw. Maximum jeweils 2 Strahlen destruktiv bzw. konstruktiv interferieren.\\ \\
+	Für das $n$-te Minimum bzw. Maximum im Abstand $x$ von der optischen Achse und im Abstand $l$ vom Spalt gilt:
+	\begin{equation}
+	\label{eq:einzelspalt4}
+	x=l \cdot \tan \alpha_n
+	\end{equation}
+	Mit der Kleinwinkelnäherung $sin \alpha = \tan \alpha = \alpha$ und aus \ref{eq:einzelspalt1} gilt:
+	\begin{eqnarray*}
+	\frac{y_n}{l}&=&\frac{\delta s_n}{d} \\
+	\Rightarrow d&=&\frac{n \cdot \lambda \cdot l}{y_n}
+	\end{eqnarray*}
+	Aus \ref{eq:einzelspalt2} bzw. \ref{eq:einzelspalt3} folgt für Minima bzw. Maxima:
+	\begin{equation*}
+	d=\frac{n \cdot \lambda l}{y_n} \quad \text{bzw.} \quad d=\frac{(n + \frac{1}{2}) \cdot \lambda \cdot l}{y_n}
+	\end{equation*}
+	
+	Nun kann aus der Messung der Lage der Minima und Maxima die Spaltbreite bestimmt werden.
+	
+	\subsection{Gleichbreiter Steg}
+	Nun soll die Beugungsfigur eines gleichbreiten Steges mit der des Spaltes aus der vorherigen Aufgabe verglichen werden. Da sie komplementär und dieselbe Breite zueinander sind, erwarten wir nach dem Babinetschen Theorem das gleiche Beugungsbild.
+	\subsection{Kreisöffnung, Kreisscheibe, Kante}
+	In diesem Versuchsteil sollen die Beugungsbilder einer Kreisscheibe, einer Kreisöffnung und einer Kante betrachtet werden und uns damit nochmal überzeugen, dass das Babinetsche Theorem gilt.\\ \\
+	Kreisscheibe und Kreisöffnung sollen aufgrund ihrer Komplementarität das gleiche Beugungsbild ergeben. In der Mitte der Beugungsbilder ist ein heller Fleck, der sogennante \textbf{Poissonsche Fleck}, zu erwarten. Dieser entsteht dadurch, dass alle Elementarwellen auf dem Kreis die gleiche Entfernung zum Mittelpunkt zurücklegen und deshalb konstruktiv interferieren und das 0. Maximum bilden.
+	\subsection{Bestimmung des Durchmessers des Haares}
+	Es soll in diesem Versuch der Durchmesser eines Haares bestimmt werden. Diesen kann man analog wie für die Dicke des Steges bestimmen. Anschließend soll der ermittelte Wert mit dem Wert aus der Messung des Durchmessers mit einer Mikrometerschraube verglichen werden.
+	
+	\section{Beugung an Mehrfachspalten und Gittern}
+	\subsection{Spaltbreite und Spaltabstand eines Doppelspalts}
+	In diesem Versuch werden wir uns mit der Bestimmung der Spaltbreite und Spaltabstandes eines Doppelspalts aus seinem Beugungsbild beschäftigen.
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}r@{}}
+			\includegraphics[width=0.6\textwidth]{bilder/doppelspalt.png}\\
+			\footnotesize\sffamily\textbf{Quelle:} Wikipedia \cite{wiki:doppelspalt}
+		\end{tabular}
+		\caption{Intensitätsverteilung hinter einem Doppelspalt. Die Einhüllende ist das Beugungsbild der beiden Einzelspalte}
+		\label{fig:doppelspalt}
+	\end{figure}
+	
+	Das Beugungsbild auf dem Schirm im Abstand $l$ ist eine Überlagerung von den zwei Beugungsfiguren der Einzelspalte (Abbildung \ref{fig:doppelspalt}). Die Einhüllende beschreibt die Summe der Beugungsfiguren der beiden Einzelspalte. Wir können die Spaltbreite analog zur Aufgabe 1.1 bestimmen. Für das Minimum bzw. Maximum gilt jeweils:
+	
+	\begin{equation}
+		\label{eq:aufgabe31}
+		d=\frac{n \cdot \lambda l}{y_n} \quad \text{bzw.} \quad d=\frac{(n + \frac{1}{2}) \cdot \lambda \cdot l}{y_n}
+	\end{equation}
+	
+	Die innere Kurve beschreibt das Beugungsbild, die sich aus der Interferenz der beiden Spalte entsteht. An  ihren Maxima und Minima ergibt sich der Spaltabstand $b$. Im Unterschied zum Einzelspalt, gibt es hier keinen einzigen Strahl, der in viele destruktiv interferierende Teilstrahlen unterteilt werden können, sondern zwei Einfachstrahlen. Die Formel für Minima und Maxima ist deshalb vertauscht.\\ \\
+	Es gilt für Minima:
+	\begin{equation}
+	\label{eq:aufgabe31a}
+	b=\frac{(n + \frac{1}{2}) \cdot \lambda \cdot l}{y_n}
+	\end{equation}
+	Für Maxima:
+	\begin{equation}
+	\label{eq:aufgabe31b}
+	b=\frac{n \cdot \lambda l}{y_n}
+	\end{equation}
+	
+	\subsection{Beugungsbildvergleich eines Doppelspalts und Dreifachspalts}
+	\begin{enumerate}[label=a)]
+		\item \textbf{zweiter Doppelspalt} Es soll ein zweiter Doppelspalt mit einer anderen Spaltbreite $d$ verwendet werden. Laut Formel \ref{eq:aufgabe31} ist Spaltabstand proportional zu $\frac{1}{y_n}$, deshalb ist es zu erwarten, dass der Abstand zwischen den Maxima in der Einhüllenden sich ändert.\\ \\
+		Aus \ref{eq:aufgabe31b} wird ersichtlich, dass ein zweiter Doppelspalt mit anderer Spaltbreite bewirkt, dass sich die Maxima der inneren Kurve voneinander verschieben.
+		\item \textbf{Dreifachspalt} Es ist zu erwarten, dass ein Dreifachspalt mit gleicher Spaltbreite und Spaltabstand das gleiche Beugungsmuster erzeugen wird, jedoch stärker ausgeprägt, da sich nun drei Spalte aufsummieren. Es sind jedoch mehr Minimas und Maximas im Interferenzmuster (innere Kurve) zu erwarten.
+	\end{enumerate}
+	\subsection{Gitter}
+	Ein Gitter mit Gitterkonstante $g$ ist eine Aneinanderreihung von $n$ Spalten im Abstand $\frac{1}{g}$. Deshalb gilt es analog für Maxima wie in Aufgabe 3.1 analog:
+	\begin{equation*}
+	\frac{1}{g}=\frac{n \cdot \lambda \cdot l}{x_n}
+	\end{equation*}
+	mit $x_n$ der Abstand des Maximums von der optischen Achse.\\ \\
+	Die Ausleuchtung sorgt dafür, dass das Gitter möglichst gut ausgeleuchtet wird und Interferenzmuster in möglichst allen Gitteröffnung erzeugen zu lassen.
+	
+	\subsection{Beugungsbild von Kreuz- und Wabengittern}
+	Die ist ein Demonstrationsversuch ohne Auswertung. Dabei geht es um das Betrachten von den Beugungsbildern von Kreuz- und Wabbengittern.
+	
+	\section{Abbildung nichtselbstleuchtender Gegenstände}
+	Es soll in diesem Versuch gezeigt werden, dass die zuvor eingeleitete Abbesche Abbildungstheorie tatsächlich gilt, also dass es bei der Entstehung des Objektbildes im Mikroskop auf die Beugung ankommt.\\ \\
+	Dazu soll ein Gitter mit parallelem Licht durchgeleuchtet und mithilfe einer Linse nach Umlenkung mit einem Planspiegel auf einem Schirm abgebildet werden. Eine Beugungsordnungsblende in der bildseitigen Brennebene der Linse gestattet nur das Durchlassen von 0. oder 0. und 1. Ordnung des gebeugten Lichts. Wenn man also die Blende so einstellt, dass sie nur die 0. Ordnung durchlässt, ist, nach der Abbeschen Theorie, zu erwarten, dass das Gitterbild verschwinden und nur noch ein verschwommener Fleck zu sehen sein wird. Wenn höhere Ordnungen eingestellt werden, so soll die Gitterstruktur auf dem Schirm erkennbar sein. Die 0. Ordnung lässt die Lichtstrahlen durch das Gitter unbeirrt passieren, bei höheren Ordnungen werden jedoch noch Geometrieinformationen des Gitters übertragen.
+	
+	\section{Holographie}
+	Bei der Schwarzweissfotografie wird lediglich die Intensität des einfallenden Lichtes auf einer 2-dimensionalen Photoplatte gespeichert. Bei der Farbfotografie wird zusätzlich auch die Farbe, also die Frequenz des Lichtes, aufgenommen.\\ \\
+	Mit Holografie wird zusätzlich auch die Phase des Lichtes gespeichert. Dazu verwendet man kohärentes Licht, vorwiegend Laserlicht, die mittels Streulinsen aufgeweitet wurde, um möglichst grosse Objekte abbilden zu können. Der Laserstrahl wird in 2 Teilstrahlen aufgeteilt, von denen einer als Referenzstrahl auf die Photoplatte gelenkt wird, während der andere vom Objekt auf die Platte gestreut wird. Die vom Objekt reflektierten Strahlen gelangen dann zur Photoplatte, sind aber im Vergleich zum Referenzstrahl phasenverschoben. Die beiden Strahlen treffen sich auf der Photoplatte und erzeugten so Interferenzmuster, die keine Ähnlichkeiten mit dem Objekt selbst aufweist.\\ \\
+	Wird das entwickelte Hologramm mit Licht derselben Wellenlänge beleuchtet, erhalten wir ein dreidimensionales Bild. Dies ermöglicht die Betrachtung des Hologramms aus verschiedenen Blickwinkeln.
+
+	\newpage
+	\bibliographystyle{plain}
+	\bibliography{quellen}
+
+\end{document}

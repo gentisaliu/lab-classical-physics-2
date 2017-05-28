@@ -1,0 +1,449 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     16917,        440]
+NotebookOptionsPosition[     16121,        412]
+NotebookOutlinePosition[     16459,        427]
+CellTagsIndexPosition[     16416,        424]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Aufgabe", " ", "2.1"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"punkte", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "17", "]"}], ",", 
+         RowBox[{"Log", "[", "0.01", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "26", "]"}], ",", 
+         RowBox[{"Log", "[", "0.015", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "34.5", "]"}], ",", 
+         RowBox[{"Log", "[", "0.022", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "42.3", "]"}], ",", 
+         RowBox[{"Log", "[", "0.02", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "50", "]"}], ",", 
+         RowBox[{"Log", "[", "0.0215", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "60.7", "]"}], ",", 
+         RowBox[{"Log", "[", "0.027", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "65", "]"}], ",", 
+         RowBox[{"Log", "[", "0.026", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "72.5", "]"}], ",", 
+         RowBox[{"Log", "[", "0.026", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "80", "]"}], ",", 
+         RowBox[{"Log", "[", "0.026", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "86.8", "]"}], ",", 
+         RowBox[{"Log", "[", "0.03", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "95.8", "]"}], ",", 
+         RowBox[{"Log", "[", "0.034", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "100.5", "]"}], ",", 
+         RowBox[{"Log", "[", "0.036", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "107.2", "]"}], ",", 
+         RowBox[{"Log", "[", "0.04", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "114", "]"}], ",", 
+         RowBox[{"Log", "[", "0.045", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "133.5", "]"}], ",", 
+         RowBox[{"Log", "[", "0.059", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "146.2", "]"}], ",", 
+         RowBox[{"Log", "[", "0.069", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "165", "]"}], ",", 
+         RowBox[{"Log", "[", "0.083", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "189.2", "]"}], ",", 
+         RowBox[{"Log", "[", "0.095", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "195", "]"}], ",", 
+         RowBox[{"Log", "[", "0.11", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "207", "]"}], ",", 
+         RowBox[{"Log", "[", "0.115", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "236", "]"}], ",", 
+         RowBox[{"Log", "[", "0.153", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "258.7", "]"}], ",", 
+         RowBox[{"Log", "[", "0.186", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "278.8", "]"}], ",", 
+         RowBox[{"Log", "[", "0.214", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "303", "]"}], ",", 
+         RowBox[{"Log", "[", "0.26", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "330.1", "]"}], ",", 
+         RowBox[{"Log", "[", "0.315", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "388.5", "]"}], ",", 
+         RowBox[{"Log", "[", "0.45", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "425", "]"}], ",", 
+         RowBox[{"Log", "[", "0.54", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "450.8", "]"}], ",", 
+         RowBox[{"Log", "[", "0.62", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "476.2", "]"}], ",", 
+         RowBox[{"Log", "[", "0.7", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Log", "[", "500", "]"}], ",", 
+         RowBox[{"Log", "[", "0.78", "]"}]}], "}"}], ","}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"model", "=", 
+    RowBox[{"LinearModelFit", "[", 
+     RowBox[{"punkte", ",", "x", ",", "x"}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"ListPlot", "[", "punkte", "]"}], ",", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"model", "[", "\"\<BestFit\>\"", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "]"}], ",", 
+     RowBox[{"AxesLabel", "->", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Ln(T) [Ln(C\[Degree])]\>\"", ",", " ", 
+        "\"\<Ln(U_P) [Ln(mV)]\>\""}], "}"}]}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6091429108210278`*^9, 3.6091429386816273`*^9}, {
+   3.609142982084309*^9, 3.609143048226466*^9}, {3.609143129385645*^9, 
+   3.6091431992973185`*^9}, {3.609143378346903*^9, 3.609143394941982*^9}, {
+   3.6091434734794245`*^9, 3.6091437263012*^9}, {3.609143817129834*^9, 
+   3.609143836999099*^9}, {3.609143875418747*^9, 3.609143906845729*^9}, {
+   3.6091442206832466`*^9, 3.6091442570195045`*^9}, {3.6109941561554575`*^9, 
+   3.610994164384279*^9}, {3.6109942305981083`*^9, 3.6109942836095977`*^9}, {
+   3.610994318193057*^9, 3.6109943420399323`*^9}, {3.610994440663707*^9, 
+   3.6109944767151847`*^9}, {3.6109945134691734`*^9, 
+   3.6109945746914806`*^9}, {3.610994630188732*^9, 3.6109946337132196`*^9}, {
+   3.6109947167489567`*^9, 3.610994759958518*^9}, 3.6109950621632614`*^9, {
+   3.6132843450349617`*^9, 3.613284907532991*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"LinearModelFit", "::", "notdata"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The first argument is not a vector, matrix, or a list \
+containing a design matrix and response vector. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/LinearModelFit\\\", ButtonNote -> \
+\\\"LinearModelFit::notdata\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.613284829531784*^9, 3.6132849093968163`*^9}],
+
+Cell[BoxData[
+ RowBox[{"LinearModelFit", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "17", "]"}], ",", 
+       RowBox[{"-", "4.605170185988091`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "26", "]"}], ",", 
+       RowBox[{"-", "4.199705077879927`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3.5409593240373143`", ",", 
+       RowBox[{"-", "3.816712825623821`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3.744787086052232`", ",", 
+       RowBox[{"-", "3.912023005428146`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "50", "]"}], ",", 
+       RowBox[{"-", "3.83970234384852`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.1059436980654525`", ",", 
+       RowBox[{"-", "3.611918412977808`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "65", "]"}], ",", 
+       RowBox[{"-", "3.649658740960655`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.283586561860629`", ",", 
+       RowBox[{"-", "3.649658740960655`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "80", "]"}], ",", 
+       RowBox[{"-", "3.649658740960655`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.463606621666305`", ",", 
+       RowBox[{"-", "3.506557897319982`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.562262684976814`", ",", 
+       RowBox[{"-", "3.3813947543659757`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.61015772749913`", ",", 
+       RowBox[{"-", "3.3242363405260273`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.674696248636701`", ",", 
+       RowBox[{"-", "3.2188758248682006`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "114", "]"}], ",", 
+       RowBox[{"-", "3.101092789211817`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.894101477840304`", ",", 
+       RowBox[{"-", "2.8302178350764176`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.9849755473156785`", ",", 
+       RowBox[{"-", "2.6736487743848776`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "165", "]"}], ",", 
+       RowBox[{"-", "2.488914671185539`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5.2428046566177775`", ",", 
+       RowBox[{"-", "2.353878387381596`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "195", "]"}], ",", 
+       RowBox[{"-", "2.2072749131897207`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "207", "]"}], ",", 
+       RowBox[{"-", "2.162823150618887`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "236", "]"}], ",", 
+       RowBox[{"-", "1.8773173575897015`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5.5556690891919835`", ",", 
+       RowBox[{"-", "1.6820086052689358`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5.630494678886369`", ",", 
+       RowBox[{"-", "1.5417792639602856`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "303", "]"}], ",", 
+       RowBox[{"-", "1.3470736479666092`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5.799395638859147`", ",", 
+       RowBox[{"-", "1.155182640156504`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5.962293169807702`", ",", 
+       RowBox[{"-", "0.7985076962177716`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "425", "]"}], ",", 
+       RowBox[{"-", "0.616186139423817`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6.1110237821656215`", ",", 
+       RowBox[{"-", "0.4780358009429998`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6.165837934052762`", ",", 
+       RowBox[{"-", "0.35667494393873245`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Log", "[", "500", "]"}], ",", 
+       RowBox[{"-", "0.2484613592984996`"}]}], "}"}], ",", "Null"}], "}"}], 
+   ",", "x", ",", "x"}], "]"}]], "Output",
+ CellChangeTimes->{3.6109948557602687`*^9, 3.6109950633360977`*^9, 
+  3.61328483072927*^9, 3.6132849093991127`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"LinearModelFit", "::", "notdata"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The first argument is not a vector, matrix, or a list \
+containing a design matrix and response vector. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/LinearModelFit\\\", ButtonNote -> \
+\\\"LinearModelFit::notdata\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.613284829531784*^9, 3.6132849094425488`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"LinearModelFit", "::", "notdata"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The first argument is not a vector, matrix, or a list \
+containing a design matrix and response vector. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/LinearModelFit\\\", ButtonNote -> \
+\\\"LinearModelFit::notdata\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.613284829531784*^9, 3.613284909476738*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"LinearModelFit", "::", "notdata"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The first argument is not a vector, matrix, or a list \
+containing a design matrix and response vector. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/LinearModelFit\\\", ButtonNote -> \
+\\\"LinearModelFit::notdata\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.613284829531784*^9, 3.6132849095112057`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[\\(LinearModelFit :: notdata\\), \
+\\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this calculation. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
+ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.613284829531784*^9, 3.613284909532277*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[0.42440494198636775`, 0.24, 0.6], PointBox[CompressedData["
+1:eJxTTMoPSmViYGCQA2IQXVX/62D2KjYH0dCtuzdmCx04K/Xh1RQBLoeJ0S9r
+6s8IHPi1LLP6UTCPQ6Xlo90LOvgOrJ7X8S7oK6/Deuk12y958x+A0g6rF568
+s3U73wGLRZaNNTkCDhurZKpNn/IcKNWcMnnSJgGHkif6Hg1GvAfkpJlbUpQE
+4XyXhoq/hu0IvonAzo27bwk6LNMQscrj5Tlg/4nv1EF7IQfvj2kbJXi5D2zi
++qJ/tkDIwf7+VwvOGVwHZjWfmvR4k5CDce/b744HOA9Mf9jDeO+jkMMc05o9
+nOc5DlS3VIX1TxZ28F8z0d5zCduByiCevLkfhB1On/z+fWEy64Gt9mk/anJE
+HGzNoiR8XjIfmP917YmFP0QcqlpVDPddYTpgkWVv1Csu6nC/6PX++hWMB2qj
+7W22hIg6bG8JtyzzZTzwdXvrzm+3RB0qfn54U8v5b7/Ky9BARksxh9Ptn281
+vvy1/2rlitQFrWIOMkeO7lZY/WP/51/Hjt65JeawR+6rxNzer/ut7pgenWIk
+7vBQ4NipBdWf9v/8XJqYfFPcQbpJmjmh9+X+cLYvd8JMJRxqYxb9O7398X7R
+10/NNxRKOKxqul6hPOPe/qKjMdkXV0o4BNg/VDl8+dr+pB0bLA/dlnDou+vw
+acrZ8/sBqwTssw==
+       "]]}, {}}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"Ln(T) [Ln(C\[Degree])]\"", TraditionalForm], 
+    FormBox["\"Ln(U_P) [Ln(mV)]\"", TraditionalForm]},
+  AxesOrigin->{2.833213344056216, -4.605170185988091},
+  ImageSize->{700., Automatic},
+  Method->{},
+  PlotRange->{{2.833213344056216, 6.214608098422191}, {-4.605170185988091, 0}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0.0676278950873195, 0.0676278950873195}, {
+   0.09210340371976182, 0.09210340371976182}}]], "Output",
+ CellChangeTimes->{3.6109948557602687`*^9, 3.6109950633360977`*^9, 
+  3.61328483072927*^9, 3.613284909558826*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6109948456161013`*^9, 3.6109948456651497`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.610994829647829*^9, 3.610994829702838*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.609145399281662*^9, 3.6091454839722013`*^9}, 
+   3.6091455856030507`*^9, {3.609145634670808*^9, 3.6091456589229984`*^9}, {
+   3.609146107436461*^9, 3.6091461802290597`*^9}, {3.609146225893545*^9, 
+   3.6091463106101*^9}, {3.609146392127522*^9, 3.6091464140751734`*^9}, {
+   3.609146728221898*^9, 3.609146841993851*^9}, 3.610994593674902*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{
+  3.60914779419672*^9, {3.6091479334867096`*^9, 3.609147966988075*^9}, {
+   3.6091480046592236`*^9, 3.6091480734011164`*^9}, {3.609148122281748*^9, 
+   3.6091481419698915`*^9}, {3.610994682529747*^9, 3.6109946842749805`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.610994686625642*^9, 3.6109946866296463`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6109946854358015`*^9, 3.6109946854388046`*^9}}]
+},
+WindowSize->{901, 631},
+WindowMargins->{{284, Automatic}, {156, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 6183, 158, 341, "Input"],
+Cell[6765, 182, 521, 10, 40, "Message"],
+Cell[7289, 194, 4137, 110, 187, "Output"],
+Cell[11429, 306, 521, 10, 40, "Message"],
+Cell[11953, 318, 519, 10, 40, "Message"],
+Cell[12475, 330, 521, 10, 40, "Message"],
+Cell[12999, 342, 562, 11, 23, "Message"],
+Cell[13564, 355, 1483, 29, 441, "Output"]
+}, Open  ]],
+Cell[15062, 387, 96, 1, 32, "Input"],
+Cell[15161, 390, 92, 1, 32, "Input"],
+Cell[15256, 393, 390, 5, 32, "Input"],
+Cell[15649, 400, 272, 4, 32, "Input"],
+Cell[15924, 406, 94, 1, 32, "Input"],
+Cell[16021, 409, 96, 1, 32, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

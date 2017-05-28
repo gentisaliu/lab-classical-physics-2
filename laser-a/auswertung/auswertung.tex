@@ -1,0 +1,107 @@
+\documentclass[a4paper,titlepage]{scrartcl}
+\pagestyle{plain}
+\usepackage[T1]{fontenc} 
+\usepackage[latin9]{inputenc}
+\usepackage[german]{babel}
+\usepackage{units}
+\usepackage{floatrow}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{pgfplots,pgfplotstable}
+\usepackage{numprint}
+\usepackage{graphicx}
+
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+\numberwithin{equation}{section}
+
+\title{Auswertung vom Versuch P2-16: Laser A}
+\author{Gruppe Di-22\\Genti Saliu, Jonas Müller}
+\date{05. Juli 2014}
+
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+
+\section{Brewsterwinkel}
+\subsection{Brewster-Fenster im Laser}
+Wir sind in diesem Versuchsteil so vorgegangen, wie im entsprechenden Teil der Vorbereitung geschildert.
+\subsection{Bestimmung von Brewsterwinkel und Brechungsindex}
+Es sollte der Brewsterwinkel mit 2 verschiedenen Methoden bestimmt werden. Dazu bestrahlten wir ein drehbar gelagertes durchsichtiges Blättchen mit dem Laser und bestimmten wir das Intensitätsmaximum bzw. -minimum.
+\begin{description}
+	\item[Methode 1: Maximummessung] \hfill \\
+	Durch Drehen des Blättchens veränderten wir den Einfallswinkel des Lasers. Mit einem Si-Photoelement haben wir die Intensität des transmittierten Lichtes gemessen. \\
+	Beim Brewsterwinkel wird der p-polarisierte Anteil des Lichtes nicht reflektiert sondern vollständig transmittiert, weshalb ein Intensitätsmaximum gemessen werden sollte. Das Photoelement gibt uns dabei nicht direkt die Intensität sondern eine zur Intensität proportionalen Spannung. \\
+	Bei der Messung schwankte die Spannung relativ stark, weshalb wir den Wert für den Brewster-Winkel nur abschätzen konnten. Wir erhielten einen Winkel von $\Theta_B=\unit[50]{^\circ}$. Damit ergibt sich für den gesuchten Brechungsindex $n_2$ ($n_1$ ist der Brechungsindex der Luft, also $n_1 \approx 1$) laut Vorbereitung:
+	\begin{eqnarray*}
+		\Theta_B&=&\arctan \left( \frac{n_2}{n_1} \right)\\
+		\Rightarrow \frac{n_2}{n_1}&=&\tan \Theta_B\\
+		\Rightarrow n_2&=&\tan \Theta_B\\
+		n_2&=&\tan \unit[50]{^\circ}=1.19
+	\end{eqnarray*}
+	Die Größenordnung des Wertes scheint plausibel, da das Blättchen einen höheren Brechungsindex als die Luft hat.
+	\item[Methode 2: Minimummessung] \hfill \\
+	Auch hier der Einfallswinkel des Lasers durch Drehen des Blättchens variiert, allerdings beobachteten wir dieses Mal den reflektierten Anteil des Lichtes.\\
+	Da am Brewster-Winkel der reflektierte Strahl definitionsgemäß verschwindet, sollte man mit dieser Methode ein genaueres Ergebnis erhalten. Wir beobachteten den reflektierenden Strahl an der Zimmerdecke und versuchten die Position, bei der der Strahl verschwindet, auszumachen. Wir erhielten so einen Wert von $\Theta_B=\unit[55.5]{^\circ}$, womit wir, wie oben, den Brechungsindex bestimmen konnten:
+	\begin{equation*}
+	n_2=\tan \unit[55.5]{^\circ}=1.46
+	\end{equation*}
+\end{description}
+Wir erwarten, dass dieser Wert genauer ist als der über die Maximummessung ermittelte Wert, da das Photoelement sehr lichtempfindlich ist und es viele Störquellen gab (Umgebungslicht usw.).
+
+\section{Beugung am Spalt, Steg, Kreisloch, Kreisblende und Kante}
+\subsection{Einzelspalt}
+\begin{table}[H]
+\tabcolsep=0.05cm
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+	$n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 \\
+	\hline
+	$\bar{y_n}$ (mm) & 4.8 & 9.05 & 13.9 & 18.4 & 23.05 & 27.45 & 32.2 & 36.3 & 41.25 & 45.65 & 49.75 & 54.8 & 59.15 & 61.97 & 67.9\\
+	\hline
+	$\sigma_{y_n}$ (mm) & 0.33 & 1.20 & 0.22 & 0.29 & 0.54 & 0.27 & 1.04 & 0.48 & 0.83 & 1.07 & 1.17 & 1.39 & 1.39 & 3.02 & 1.07 \\
+\end{tabular}
+\caption{Mittelwert der Lage der Minima $\bar{y_n}$ und deren Standardabweichung $\sigma_{y_n}$}
+\label{tab:aufgabe21}
+\end{table}
+\subsection{Gleichbreiter Steg}
+\subsection{Kreisöffnung, Kreisscheibe, Kante}
+\subsection{Bestimmung des Durchmessers des Haares}
+
+\section{Beugung an Mehrfachspalten und Gittern}
+\subsection{Spaltbreite und Spaltabstand eines Doppelspalts}
+\begin{table}[H]
+\tabcolsep=0.1cm
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c}
+	$n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+	\hline
+	$\bar{y_n}$ (mm) & 3.75 & 8.55 & 14.05 & 19.85 & 24.75 & 29.7 & 35.35 & 40.8 & 46.65 & 52.8 & 59.5 & 64.75\\
+	\hline
+	$\sigma_{y_n}$ (mm) & 1.39 & 0.59 & 1.60 & 1.56 & 1.64 & 1.68 & 2.00 & 1.86 & 1.71 & 2.93 & 3.98 & 3.15\\
+\end{tabular}
+\caption{Mittelwert der Lage der Minima $\bar{y_n}$ und deren Standardabweichung $\sigma_{y_n}$}
+\label{tab:aufgabe31a}
+\end{table}
+\begin{table}[H]
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+	$n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+	\hline
+	$\bar{y_n}$ (mm) & 7.8 & 13.4 & 21.1 & 28.3 & 35.5 & 42.0 & 49.1 & 55.9 & 63.4 & 70.1 & 76.7 \\
+	\hline
+	$\sigma_{y_n}$ (mm) & 1.04 & 1.08 & 1.64 & 1.44 & 2.10 & 1.90 & 1.75 & 1.78 & 2.46 & 1.85 & 1.92\\
+\end{tabular}
+\caption{Mittelwert der Lage der Minima $\bar{y_n}$ und deren Standardabweichung $\sigma_{y_n}$}
+\label{tab:aufgabe31b}
+\end{table}
+\subsection{Beugungsbildvergleich eines Doppelspalts und Dreifachspalts}
+\subsection{Gitter}
+\subsection{Beugungsbild von Kreuz- und Wabengittern}
+
+\end{document}
