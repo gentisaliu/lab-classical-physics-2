@@ -39,7 +39,20 @@ Ein Protokoll besteht aus:
   - Bestimmung der mittleren Energie für die hauptsächliche Anregung von Neon
 
 - **Polarisation und Doppelbrechung**
+  - Herstellung von _linear_, _elliptisch_ und _zirkular_ polarisiertem Licht, Messung der Intensitätsverteilungen
+  - Bestimmung der Differenz der Brechungsindizes des elliptisch polarisierten Lichts für beide außerordentlichen Strahlen
+  - Demonstration der Spannungsdoppelbrechung an unterschiedlichen Plexiglasmodellen
+
 - **Laser-Optik, Teil A**
+  - Messung des Brewster-Winkels und Bestimmung des Brechungsindizes von Glas
+  - Beobachtung von Beugung am Spalt, Bestimmung der Spaltbreite
+  - Vergleich der Beugungsfiguren eines Steges mit der des Spaltes
+  - Betrachtung der Beugungsfiguren einer Kreisöffnung, einer Kreisscheibe und einer Kante
+  - Bestimmung des Durchmessers eines Haares
+  - Beugung an Mehrfachspalten und Gittern
+  - Abbildungen nichtselbstleuchtender Gegenstände
+  - Holographie
+
 - **Operationsverstärker**
 - **Ideales und reales Gas**
 - **Laser-Optik, Teil B**
