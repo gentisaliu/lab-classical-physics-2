@@ -1,13 +1,13 @@
 # Protokolle zum Praktikum "Klassische Physik Teil 2"
-In diesem Repository befinden sich alle von mir und meinem Praktikumspartner, Jonas Müller, angefertigten Protokolle zu den Experimenten aus dem [Praktikum "Klassische Physik Teil 2"](http://www-ekp.physik.uni-karlsruhe.de/~simonis/praktikum/p2/p2-index.html) an der KIT im Sommersemester 2014, das dort Teil der Bachelor Physiker-Ausbildung ist.
+In diesem Repository befinden sich alle von mir und meinem Praktikumspartner angefertigten Protokolle zu den Experimenten aus dem [Praktikum "Klassische Physik Teil 2"](http://www-ekp.physik.uni-karlsruhe.de/~simonis/praktikum/p2/p2-index.html) an der KIT im Sommersemester 2014, das dort Teil der Bachelor Physiker-Ausbildung ist.
 
 Zu jedem Experiment gibt es eine von der Fakultät zur Verfügung gestellte Anleitung.
 
 Ein Protokoll besteht aus:
 - **Vorbereitung**: Einarbeitung in die physikalischen Grundlagen des Experiments
-- **Laboraufnahmen**: aufgenommene Bilder während der Durchführung des Experiments
+- **Laboraufnahmen**: während der Durchführung des Experiments aufgenommene Bilder
 - **Messdaten**: Daten, die aus Messungen im Labor entstanden sind
-- **Auswertung**: Darstellung der Messungdaten in Tabellen- und Diagrammform, Berechnung von systematischen und statistischen Fehlern, physikalische Interpretation der Ergebnisse
+- **Auswertung**: Darstellung der Messdaten in Tabellen- und Diagrammform, Berechnung von systematischen und statistischen Fehlern, physikalische Interpretation der Ergebnisse
 
 ## Experimente
 
